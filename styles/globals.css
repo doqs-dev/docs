@@ -26,3 +26,10 @@ ol {
 p {
     @apply mb-3;
 }
+
+code {
+    @apply block;
+    @apply p-3;
+    @apply bg-gray-300;
+
+}
