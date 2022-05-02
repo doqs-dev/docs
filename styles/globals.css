@@ -31,13 +31,6 @@ p {
     @apply mb-3;
 }
 
-code {
-    @apply block;
-    @apply p-3;
-    @apply bg-gray-200;
-
-}
-
 main a {
     @apply text-primary;
 }
