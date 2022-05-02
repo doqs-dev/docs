@@ -1,0 +1,46 @@
+import {SimpleCodeHighlighter} from "../../components/code-highlighter";
+
+# Create a template
+
+POST /templates
+
+For [authentication](/api-reference/authentication)  provide `x-api-key` header.
+
+
+## Request
+
+Header parameters
+* `x-api-key`: [required] API key
+* `Content-Type`: [required] multipart/form-data
+<br/>
+
+Body
+* `file`: [required] multipart binary pdf file
+<br/>
+
+<SimpleCodeHighlighter language="python"
+                       code={`import requests
+with open('my-template.pdf, 'rb) as pdf:
+    requests.post("https://api.doqs.dev/va/templates/",
+        headers={
+            "x-api-key": "your-api-key",
+            "content-type": "multipart/form-data"
+        },
+        files={"file": ("my-template.pdf", pdf)}
+    )
+`}
+/>
+
+
+<br/>
+
+## Response
+<SimpleCodeHighlighter language="json"
+                       code={`{
+    "results: {
+        "id": "tpl_d7d84644c9374cdf83e2c8463279e23c",
+        "name": "my-template",
+        "fields": []
+    }
+}
+`}/>

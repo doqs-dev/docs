@@ -1,0 +1,19 @@
+import {SimpleCodeHighlighter} from "../../components/code-highlighter";
+
+# Authentication
+
+Authenticate your api calls by providing your api key in the header. You can retrieve and manage your api keys in the [dashboard](https://app.doqs.dev/organization).
+
+## Headers
+
+| Header    | Value                           |
+|:----------|:--------------------------------|
+| x-api-key | your api key from the dashboard |
+
+
+## Examples
+This is an example of how to authenticate your api calls in python with the requests library.
+<SimpleCodeHighlighter language="python" code={`import requests
+requests.post("https://app.doqs.dev/api/v1/templates", json={"x-api-key": "your api key"})
+`}
+/>
