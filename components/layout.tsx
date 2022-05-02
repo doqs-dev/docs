@@ -9,7 +9,7 @@ export default function Layout({children}) {
           <link rel="icon" href="/favicon.ico"/>
         </Head>
         <div className="flex divide-x-2">
-          <aside className="flex-none sticky top-0 overflow-y-auto px-3 h-screen border-slate-100">
+          <aside className="flex-none sticky top-0 overflow-y-auto px-5 h-screen border-slate-100">
 
             <div id="sidebar-header" className="my-3">
               <img src="logo.svg" width={20} alt="Logo" className={"inline-block"}/>
@@ -25,10 +25,14 @@ export default function Layout({children}) {
 
           </aside>
           <div className={"flex-1 divide-y-2"}>
-            <main>
+            <main className="ml-8 py-8">
               {children}
             </main>
-            <footer>Footer</footer>
+            <footer>
+              <div className={"ml-8 mt-5"}>
+                Footer
+              </div>
+            </footer>
           </div>
         </div>
       </>
