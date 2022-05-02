@@ -33,3 +33,7 @@ code {
     @apply bg-gray-300;
 
 }
+
+main  a {
+    @apply text-primary;
+}
