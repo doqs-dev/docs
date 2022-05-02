@@ -1,4 +1,16 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    --color-primary: 4 38 145; /*#042691*/
+    --color-secondary: 0 213 174; /*#00D5AE*/
+
+    @apply bg-gray-100;
+    @apply text-black;
+}
+
+.dark > body {
+    @apply bg-gray-800;
+    @apply text-gray-100;
+}
