@@ -4,7 +4,13 @@ Authenticate your api calls by providing your api key in the header. You can ret
 
 ## Headers
 
-| Header    | Value        |
-|-----------|--------------|
-| x-api-key | your api key |
+| Header    | Value                           |
+|:----------|:--------------------------------|
+| x-api-key | your api key from the dashboard |
 
+
+## Examples
+This is an example of how to authenticate your api calls in python with the requests library.
+```python
+requests.post("...", headers={"x-api-key": "your-secret-value"})
+```
