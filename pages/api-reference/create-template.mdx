@@ -10,7 +10,11 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
     {`import requests
 with open('my-template.pdf, 'rb) as pdf:
     requests.post("https://api.doqs.dev/va/templates/",
-        headers={"x-api-key": "your-api-key"}, files={"file": ("my-template.pdf", pdf)}
+        headers={
+            "x-api-key": "your-api-key",
+            "content-type": "multipart/form-data"
+        },
+        files={"file": ("my-template.pdf", pdf)}
     )
 `}
 </SimpleCodeHighlighter>
