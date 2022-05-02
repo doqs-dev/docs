@@ -1,8 +1,16 @@
-# Create template
+import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 
-POST https://api.doqs.dev/v1/templates
+# Create a template
 
-Fo
+POST /templates
 
-Headers:
-*
+For [authentication](/api-reference/authentication)  provide `x-api-key` header.
+
+<SimpleCodeHighlighter language="python">
+    {`import requests
+with open('my-template.pdf, 'rb) as pdf:
+    requests.post("https://api.doqs.dev/va/templates/",
+        headers={"x-api-key": "your-api-key"}, files={"file": ("my-template.pdf", pdf)}
+    )
+`}
+</SimpleCodeHighlighter>
