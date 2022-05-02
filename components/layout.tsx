@@ -28,7 +28,7 @@ export default function Layout({children}) {
 
           </aside>
           <div className={"flex-1 divide-y-2"}>
-            <main className="ml-8 py-8 mr-8">
+            <main className="ml-8 py-8 mr-8" style={{minHeight: "92vh"}}>
               {children}
             </main>
             <footer>
