@@ -6,6 +6,18 @@ POST /templates
 
 For [authentication](/api-reference/authentication)  provide `x-api-key` header.
 
+
+## Request
+
+Header parameters
+* `x-api-key`: [required] API key
+* `Content-Type`: [required] multipart/form-data
+<br />
+
+Body
+* `file`: [required] multipart binary pdf file
+<br />
+
 <SimpleCodeHighlighter language="python">
     {`import requests
 with open('my-template.pdf, 'rb) as pdf:
