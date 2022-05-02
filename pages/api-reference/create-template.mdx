@@ -18,8 +18,8 @@ Body
 * `file`: [required] multipart binary pdf file
 <br/>
 
-<SimpleCodeHighlighter language="python">
-    {`import requests
+<SimpleCodeHighlighter language="python"
+                       code={`import requests
 with open('my-template.pdf, 'rb) as pdf:
     requests.post("https://api.doqs.dev/va/templates/",
         headers={
@@ -29,18 +29,18 @@ with open('my-template.pdf, 'rb) as pdf:
         files={"file": ("my-template.pdf", pdf)}
     )
 `}
-</SimpleCodeHighlighter>
+/>
+
 
 <br/>
 
 ## Response
-<SimpleCodeHighlighter language="json">
-    {`{
+<SimpleCodeHighlighter language="json"
+                       code={`{
     "results: {
         "id": "tpl_d7d84644c9374cdf83e2c8463279e23c",
         "name": "my-template",
         "fields": []
     }
 }
-`}
-</SimpleCodeHighlighter>
+`}/>
