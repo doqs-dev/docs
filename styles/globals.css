@@ -23,6 +23,11 @@ h2 {
     @apply mb-2 font-bold text-xl;
 }
 
+h3 {
+    @apply mb-2 font-bold text-lg;
+}
+
+
 ol {
     @apply list-decimal list-inside;
 }

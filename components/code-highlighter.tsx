@@ -16,7 +16,7 @@ export const SimpleCodeHighlighter = ({
   return (
       <div className="code-highlighter">
         {title && <h3>{title}</h3>}
-        <SyntaxHighlighter language={language} style={darcula} wrapLines wrapLongLines>
+        <SyntaxHighlighter language={language} style={darcula} wrapLines>
           {code}
         </SyntaxHighlighter>
       </div>
