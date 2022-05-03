@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-type BadgeType = 'success' | 'warning' | 'error' | 'info'
+export type BadgeType = 'success' | 'warning' | 'error' | 'info'
 
 type BadgeProps = {
   type: BadgeType
