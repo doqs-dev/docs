@@ -9,7 +9,7 @@ import {Grid} from "../../components/grid";
 
 For [authentication](/api-reference/authentication)  provide `x-api-key` header.
 
-
+<br/>
 ## Request
 <Grid>
     <div>
@@ -40,8 +40,17 @@ with open('my-template.pdf, 'rb) as pdf:
 <br/>
 
 ## Response
-<SimpleCodeHighlighter language="json"
-                       code={`{
+
+<Grid>
+    <div>
+        Body attributes are nested inside the `results` to align with the other endpoints.
+        ## Body attributes
+
+
+    </div>
+
+    <SimpleCodeHighlighter language="json"
+                           code={`{
     "results: {
         "id": "tpl_d7d84644c9374cdf83e2c8463279e23c",
         "name": "my-template",
@@ -49,3 +58,4 @@ with open('my-template.pdf, 'rb) as pdf:
     }
 }
 `}/>
+</Grid>
