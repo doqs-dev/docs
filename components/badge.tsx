@@ -12,16 +12,16 @@ export const Badge = ({children, type}: PropsWithChildren<BadgeProps>) => {
 
   switch (type) {
     case 'success':
-      className = 'bg-green'
+      className = 'bg-green-400 text-white'
       break;
     case 'warning':
-      className = 'bg-yellow'
+      className = 'bg-amber-500 text-white'
       break;
     case 'error':
       className = 'bg-red-600 text-white'
       break;
     case 'info':
-      className = 'bg-blue'
+      className = 'bg-blue-400 text-white'
       break;
   }
 

@@ -9,10 +9,10 @@ export const Endpoint = ({method, path}: Props) => {
   let badgeType: BadgeType;
   switch (method) {
     case 'GET':
-      badgeType = 'success';
+      badgeType = 'info';
       break;
     case 'POST':
-      badgeType = 'info';
+      badgeType = 'success';
       break;
     case 'PUT':
       badgeType = 'warning';
@@ -22,8 +22,10 @@ export const Endpoint = ({method, path}: Props) => {
       break;
   }
   return (
-      <div className="endpoint">
-        <Badge type={badgeType}/>
+      <div className="mb-2">
+        <span className="inline-block mr-3">
+          <Badge type={badgeType}>{method}</Badge>
+        </span>
         <span>{path}</span>
       </div>
   )
