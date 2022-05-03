@@ -1,5 +1,6 @@
 import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 import {Endpoint} from "../../components/endpoint";
+import {Grid} from "../../components/grid";
 
 # Create a template
 
@@ -10,20 +11,21 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
 
 
 ## Request
+<Grid>
+    <div>
+        ### Header parameters
+        * `x-api-key`: [required] API key
+        * `Content-Type`: [required] multipart/form-data
+        <br/>
 
-Header parameters
-* `x-api-key`: [required] API key
-* `Content-Type`: [required] multipart/form-data
-<br/>
-
-Body
-* `file`: [required] multipart binary pdf file
-<br/>
-
-<SimpleCodeHighlighter language="python"
-                       code={`import requests
+        ### Body
+        * `file`: [required] multipart binary pdf file
+        <br/>
+    </div>
+    <SimpleCodeHighlighter language="python"
+                           code={`import requests
 with open('my-template.pdf, 'rb) as pdf:
-    requests.post("https://api.doqs.dev/va/templates/",
+    requests.post("https://api.doqs.dev/v1/templates/",
         headers={
             "x-api-key": "your-api-key",
             "content-type": "multipart/form-data"
@@ -31,7 +33,8 @@ with open('my-template.pdf, 'rb) as pdf:
         files={"file": ("my-template.pdf", pdf)}
     )
 `}
-/>
+    />
+</Grid>
 
 
 <br/>
