@@ -18,7 +18,7 @@ export const Badge = ({children, type}: PropsWithChildren<BadgeProps>) => {
       className = 'bg-amber-500 text-white'
       break;
     case 'error':
-      className = 'bg-red-600 text-white'
+      className = 'bg-red-500 text-white'
       break;
     case 'info':
       className = 'bg-blue-400 text-white'
