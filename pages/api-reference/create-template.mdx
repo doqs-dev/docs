@@ -46,6 +46,9 @@ with open('my-template.pdf, 'rb) as pdf:
         Body attributes are nested inside the `results` to align with the other endpoints.
         ## Body attributes
 
+        * `id`: Unique identifier for the template
+        * `name`: Name of the template, this is prefilled from the filename of the uploaded file.
+        * `fields`: List of fields in the template. Always empty for now (Planned feature: automatically extracting and adding fields from the template)
 
     </div>
 
