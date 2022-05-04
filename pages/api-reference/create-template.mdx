@@ -1,6 +1,6 @@
 import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 import {Endpoint} from "../../components/endpoint";
-import {Grid} from "../../components/grid";
+import {Grid} from "../../components/grid"; import {Attribute} from "../../components/attribute";
 
 # Create a template
 
@@ -14,8 +14,7 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
 <Grid>
     <div>
         ### Header parameters
-        * `x-api-key`: [required] API key
-        * `Content-Type`: [required] multipart/form-data
+        <Attribute name="Content-Type" required={true}>The content type header needs to be set to `multipart/form-data`</Attribute>
         <br/>
 
         ### Body
