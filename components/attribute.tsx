@@ -2,18 +2,18 @@ import { PropsWithChildren } from "react";
 
 type AttributeProps = {
   name: string;
-  required: boolean;
+  required?: boolean;
 };
 
 export const Attribute = ({name, required, children}: PropsWithChildren<AttributeProps>) => {
 
   return (
 
-      <div className="border-t-2 py-3">
+      <div className="border-t-2 py-2">
         <div>
-          <span className="inline-block bg-gray-700 text-white p-0.5 rounded text-sm mr-2">{name}</span>
+          <span className="inline-block bg-gray-700 text-white py-0.5 px-1 rounded text-sm mr-2">{name}</span>
           { required && <span className="text-xs text-red-900">required</span> }
-          { !required && <span className="text-xs">optional</span> }
+          { (!required && required != null) && <span className="text-xs">optional</span> }
         </div>
         {children}
       </div>
