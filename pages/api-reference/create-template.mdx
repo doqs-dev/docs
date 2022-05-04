@@ -1,6 +1,6 @@
 import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 import {Endpoint} from "../../components/endpoint";
-import {Grid} from "../../components/grid";
+import {Grid} from "../../components/grid"; import {Attribute} from "../../components/attribute";
 
 # Create a template
 
@@ -14,12 +14,13 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
 <Grid>
     <div>
         ### Header parameters
-        * `x-api-key`: [required] API key
-        * `Content-Type`: [required] multipart/form-data
+        <Attribute name="Content-Type" required={true}>The content type header needs to be set to
+            `multipart/form-data`</Attribute>
         <br/>
 
         ### Body
-        * `file`: [required] multipart binary pdf file
+        <Attribute name="file" required={true}>Multipart binary file pdf file that is going to be used as a template to
+            fill.</Attribute>
         <br/>
     </div>
     <SimpleCodeHighlighter language="python"
@@ -44,17 +45,18 @@ with open('my-template.pdf, 'rb) as pdf:
 <Grid>
     <div>
         Body attributes are nested inside the `results` to align with the other endpoints.
-        ## Body attributes
+        ### Attributes
 
-        * `id`: Unique identifier for the template
-        * `name`: Name of the template, this is prefilled from the filename of the uploaded file.
-        * `fields`: List of fields in the template. Always empty for now (Planned feature: automatically extracting and adding fields from the template)
-
+        <Attribute name="id">Unique identifier for the template</Attribute>
+        <Attribute name="name">Name of the template, this is prefilled from the filename of the uploaded
+            file.</Attribute>
+        <Attribute name="fields">List of fields in the template. Always empty for now (Planned feature: automatically
+            extracting and adding fields from the template)</Attribute>
     </div>
 
     <SimpleCodeHighlighter language="json"
                            code={`{
-    "results: {
+    "results": {
         "id": "tpl_d7d84644c9374cdf83e2c8463279e23c",
         "name": "my-template",
         "fields": []
