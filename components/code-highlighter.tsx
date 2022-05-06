@@ -7,7 +7,9 @@ import tailwindConfig from '../tailwind.config.js'
 // @ts-ignore
 const theme = resolveConfig(tailwindConfig).theme
 
-const yellow = theme.colors.amber['200']; //"#e0c46c"
+// @ts-ignore
+const light_yellow = theme.colors.amber['200']; //"#e0c46c"
+// @ts-ignore
 const orange = theme.colors.amber['500']; //#cb7832
 
 
@@ -76,37 +78,37 @@ const style: { [key: string]: React.CSSProperties } = {
     "color": theme.colors.lime['700']//"#6a8759"
   },
   "hljs-subst": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-type": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-built_in": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-builtin-name": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-symbol": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-selector-id": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-selector-attr": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-selector-pseudo": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-template-tag": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-template-variable": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-addition": {
-    "color": yellow
+    "color": light_yellow
   },
   "hljs-comment": {
     "color": "#7f7f7f"
