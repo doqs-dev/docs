@@ -7,13 +7,15 @@ import tailwindConfig from '../tailwind.config.js'
 // @ts-ignore
 const theme = resolveConfig(tailwindConfig).theme
 
+
+// base theme darcula - adjusted colors to match tailwind
 const style: { [key: string]: React.CSSProperties } = {
   "hljs": {
     "display": "block",
     "overflowX": "auto",
     "padding": "0.5em",
-    "background": "#2b2b2b",
-    "color": "#bababa"
+    "background": theme.colors.gray[800],
+    "color": theme.colors.gray[400],
   },
   "hljs-strong": {
     "color": "#a8a8a2"
@@ -68,7 +70,7 @@ const style: { [key: string]: React.CSSProperties } = {
     "color": "#b9b9b9"
   },
   "hljs-string": {
-    "color": "#6a8759"
+    "color": theme.colors.lime['700']//"#6a8759"
   },
   "hljs-subst": {
     "color": "#e0c46c"
