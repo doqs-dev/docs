@@ -32,6 +32,9 @@ export default function Layout({children}) {
                 <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
                 Fill template
               </a></li>
+
+              <li className={"uppercase text-gray-500 text-sm my-3"}>Fields</li>
+              <li className={styles.li}><a href="/fields/text">Text field</a></li>
             </ul>
 
           </aside>

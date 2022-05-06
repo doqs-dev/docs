@@ -1,0 +1,58 @@
+import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
+    SimpleCodeHighlighter
+} from "../../components/code-highlighter";
+
+
+# Text field
+
+### Attributes
+<Grid>
+    <div>
+        <Attribute name="bbox.x" required="1">
+            X coordinate of the lower left corner of the bounding box of the field
+        </Attribute>
+        <Attribute name="bbox.y" required="1">
+            Y coordinate of the lower left corner of the bounding box of the field
+        </Attribute>
+        <Attribute name="bbox.width" required="1">
+            Width of the bounding box of the field
+        </Attribute>
+        <Attribute name="bbox.height" required="1">
+            Height of the bounding box of the field
+        </Attribute>
+
+        <Attribute name="name" required="1">
+            Key name of the field. This is going to be the key for populating the value when [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every occurrence of the key will be filled with the same value. Caution: do not mix field types.
+        </Attribute>
+
+        <Attribute name="page" required="1">The index of the page the field is residing on, starting with 0. Upper limit
+            is the number of pages in the template</Attribute>
+        <Attribute name="type" required="1">Identifier of the type of the field. Always set to `text`.</Attribute>
+
+        <Attribute name="font_size" required={false}>Specify the font size to be filled with. Defaults to 9</Attribute>
+        <Attribute name="color" required={false}>Specify the font color to be used. Format is either common color cod
+            names (e.g. black, red, etc.) or hex color codes. Defaults to `black`.</Attribute>
+
+        <Attribute name="h_align" required={false}>Horizontal alignment of the to be filled text.
+            Possible values are `L` for left aligned, `C` for centering and `R` for right aligned text. Defaults to `L`.</Attribute>
+        <Attribute name="v_align" required={false}>Vertical alignment of the to be filled text.
+            Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to `T`.</Attribute>
+
+    </div>
+    <SimpleCodeHighlighter language="json" code={`{
+    "bbox": {
+        "x": 72.15405575993107,
+        "y": 556.1774688664345,
+        "width": 201.3371400656083,
+        "height": 11.637984974890685
+    },
+    "name": "key",
+    "page": 0,
+    "type": "text",
+    "font_size": 9,
+    "color": "black",
+    "h_align": "L",
+    "v_align": "B"
+}`}/>
+</Grid>
+
