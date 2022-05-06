@@ -1,6 +1,12 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import React from "react";
 
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from '../tailwind.config.js'
+
+// @ts-ignore
+const theme = resolveConfig(tailwindConfig).theme
+
 const style: { [key: string]: React.CSSProperties } = {
   "hljs": {
     "display": "block",
