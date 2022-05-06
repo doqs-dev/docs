@@ -18,27 +18,31 @@ export const Badge = ({children, type, size}: PropsWithChildren<BadgeProps>) => 
 
   switch (type) {
     case 'success':
-      className = 'bg-green-400 text-white'
+      className = 'bg-green-400 '
       break;
     case 'warning':
-      className = 'bg-amber-500 text-white'
+      className = 'bg-amber-500'
       break;
     case 'error':
-      className = 'bg-red-500 text-white'
+      className = 'bg-red-500'
       break;
     case 'info':
-      className = 'bg-blue-400 text-white'
+      className = 'bg-blue-400'
       break;
   }
 
   let sizeClass = '';
   switch (size) {
     case "md":
-      sizeClass = 'px-3 py-1'
+      sizeClass = 'px-3 py-1';
+      break;
+    case "sm":
+      sizeClass = 'px-1.5 py-0.5'
+      break;
   }
 
   return (
-      <span className={`${className} ${sizeClass} rounded`}>
+      <span className={`${className} ${sizeClass} text-white rounded`}>
         {children}
       </span>
   );
