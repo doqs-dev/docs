@@ -4,10 +4,12 @@ import {Attribute} from "../../components/attribute"; import {
     SimpleCodeHighlighter
 } from "../../components/code-highlighter"; import {baseUrl} from "../../components/constants";
 
-# Fill template
+# Fill a template
 
-<Endpoint method="POST" path="/templates/{id}"/>
+<Endpoint method="POST" path="/templates/{id}/fill"/>
 <br/>
+
+After you [created](/api-reference/authentication) and defined a template, you can use this endpoint to fill your predefined template with data.
 
 For [authentication](/api-reference/authentication) provide the `x-api-key` header.
 
@@ -39,3 +41,11 @@ requests.post("${baseUrl}/templates/{id}/fill",
 )
 `}/>
 </Grid>
+
+<br />
+
+## Response
+In case of a successful request, the endpoint will return a byte stream of the filled pdf document.
+
+### Headers
+<Attribute name={"content-type"} >The content type header will be set to application/pdf.</Attribute>

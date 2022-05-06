@@ -23,8 +23,8 @@ export default function Layout({children}) {
               </li>
               <li className={"uppercase text-gray-500 text-sm my-3"}>API Reference</li>
               <li className={styles.li}><a href="/api-reference/authentication">Authentication</a></li>
-              <li className={styles.li}><a href="/api-reference/create-template">Create Template</a></li>
-              <li className={styles.li}><a href="/api-reference/fill-template">Fill Template</a></li>
+              <li className={styles.li}><a href="/api-reference/create-template">Create template</a></li>
+              <li className={styles.li}><a href="/api-reference/fill-template">Fill template</a></li>
             </ul>
 
           </aside>
