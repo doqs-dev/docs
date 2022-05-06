@@ -5,6 +5,7 @@
 body {
     --color-primary: 4 38 145; /*#042691*/
     --color-secondary: 0 213 174; /*#00D5AE*/
+    font-size: 14px;
 
     @apply bg-gray-100;
     @apply text-black;
