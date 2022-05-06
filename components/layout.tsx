@@ -34,7 +34,7 @@ export default function Layout({children}) {
               </a></li>
 
               <li className={"uppercase text-gray-500 text-sm my-3"}>Fields</li>
-              <li className={styles.li}><a href="/fields/text">Text fields</a></li>
+              <li className={styles.li}><a href="/fields/text">Text field</a></li>
             </ul>
 
           </aside>
