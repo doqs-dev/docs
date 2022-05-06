@@ -7,6 +7,9 @@ import tailwindConfig from '../tailwind.config.js'
 // @ts-ignore
 const theme = resolveConfig(tailwindConfig).theme
 
+const yellow = theme.colors.amber['200']; //"#e0c46c"
+const orange = theme.colors.amber['500']; //#cb7832
+
 
 // base theme darcula - adjusted colors to match tailwind
 const style: { [key: string]: React.CSSProperties } = {
@@ -14,8 +17,8 @@ const style: { [key: string]: React.CSSProperties } = {
     "display": "block",
     "overflowX": "auto",
     "padding": "0.5em",
-    "background": theme.colors.gray[800],
-    "color": theme.colors.gray[400],
+    "background": theme.colors.gray[800], // #2b2b2b
+    "color": theme.colors.gray[400], // #bababa
   },
   "hljs-strong": {
     "color": "#a8a8a2"
@@ -49,22 +52,22 @@ const style: { [key: string]: React.CSSProperties } = {
     "color": "#a6e22e"
   },
   "hljs-keyword": {
-    "color": "#cb7832"
+    "color": orange
   },
   "hljs-selector-tag": {
-    "color": "#cb7832"
+    "color": orange
   },
   "hljs-section": {
-    "color": "#cb7832"
+    "color": orange
   },
   "hljs-attribute": {
-    "color": "#cb7832"
+    "color": orange
   },
   "hljs-name": {
-    "color": "#cb7832"
+    "color": orange
   },
   "hljs-variable": {
-    "color": "#cb7832"
+    "color": orange
   },
   "hljs-params": {
     "color": "#b9b9b9"
@@ -73,37 +76,37 @@ const style: { [key: string]: React.CSSProperties } = {
     "color": theme.colors.lime['700']//"#6a8759"
   },
   "hljs-subst": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-type": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-built_in": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-builtin-name": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-symbol": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-selector-id": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-selector-attr": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-selector-pseudo": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-template-tag": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-template-variable": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-addition": {
-    "color": "#e0c46c"
+    "color": yellow
   },
   "hljs-comment": {
     "color": "#7f7f7f"
