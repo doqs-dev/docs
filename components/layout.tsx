@@ -10,7 +10,7 @@ export default function Layout({children}) {
           <link rel="icon" href="/favicon.ico"/>
         </Head>
         <div className="flex divide-x-2">
-          <aside className="flex-none sticky top-0 overflow-y-auto px-5 h-screen border-slate-100">
+          <aside className="flex-none sticky top-0 overflow-y-auto pl-4 pr-12 h-screen border-slate-100">
 
             <div id="sidebar-header" className="my-3">
               <img src="/logo.svg" width={20} alt="Logo" className={"inline-block"}/>
@@ -23,7 +23,8 @@ export default function Layout({children}) {
               </li>
               <li className={"uppercase text-gray-500 text-sm my-3"}>API Reference</li>
               <li className={styles.li}><a href="/api-reference/authentication">Authentication</a></li>
-              <li className={styles.li}><a href="/api-reference/create-template">Create Template</a></li>
+              <li className={styles.li}><a href="/api-reference/create-template">Create template</a></li>
+              <li className={styles.li}><a href="/api-reference/fill-template">Fill template</a></li>
             </ul>
 
           </aside>

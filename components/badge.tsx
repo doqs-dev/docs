@@ -27,7 +27,7 @@ export const Badge = ({children, type}: PropsWithChildren<BadgeProps>) => {
 
 
   return (
-      <span className={className + " py-2 px-4 rounded"}>
+      <span className={className + " py-1 px-3 rounded"}>
         {children}
       </span>
   );

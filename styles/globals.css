@@ -5,6 +5,7 @@
 body {
     --color-primary: 4 38 145; /*#042691*/
     --color-secondary: 0 213 174; /*#00D5AE*/
+    font-size: 14px;
 
     @apply bg-gray-100;
     @apply text-black;
@@ -20,11 +21,11 @@ h1 {
 }
 
 h2 {
-    @apply mb-2 font-bold text-xl;
+    @apply mb-2 mt-1 font-bold text-xl;
 }
 
 h3 {
-    @apply mb-2 font-bold text-lg;
+    @apply mb-2 font-bold text-base text-gray-700;
 }
 
 

@@ -1,0 +1,56 @@
+import {Endpoint} from "../../components/endpoint";
+import {Grid} from "../../components/grid";
+import {Attribute} from "../../components/attribute"; import {
+    SimpleCodeHighlighter
+} from "../../components/code-highlighter"; import {baseUrl} from "../../components/constants";
+
+# Fill a template
+
+<Endpoint method="POST" path="/templates/{id}/fill"/>
+<br/>
+
+After you [created](/api-reference/authentication) and defined a template, you can use this endpoint to fill your predefined template with data.
+
+For [authentication](/api-reference/authentication) provide the `x-api-key` header.
+
+<br/>
+
+## Request
+<Grid>
+    <div>
+        ### Header attributes
+        <Attribute name={"x-test"} required={false}>
+            Control if this request should be counted as a sandbox request or not. If your organization is not
+            subscribed yet this flag is set to `true` by default.
+        </Attribute>
+        <Attribute name={"content-type"} required={true}>
+            Only acceptable content type is `application/json`.
+        </Attribute>
+
+        ### Body attributes
+        <Attribute name={"data"} required={true}>The data should contain a key value mapping reflecting the specified schema of your template.</Attribute>
+    </div>
+    <SimpleCodeHighlighter language="python" code={`import requests
+requests.post("${baseUrl}/templates/{id}/fill",
+    headers={
+        "x-api-key": "your-api-key",
+        "x-test": "true",
+        "content-type": "application/json"
+    },
+    json={"data": {}}
+)
+`}/>
+</Grid>
+
+<br />
+
+## Response
+In case of a successful request, the endpoint will return a byte stream of the filled pdf document.
+
+### Headers
+<Grid>
+    <div>
+        <Attribute name={"content-type"} >The content type header will be set to application/pdf.</Attribute>
+    </div>
+    <div />
+</Grid>
