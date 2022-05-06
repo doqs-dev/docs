@@ -22,7 +22,9 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
         </Attribute>
 
         <Attribute name="name" required="1">
-            Key name of the field. This is going to be the key for populating the value when [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every occurrence of the key will be filled with the same value. Caution: do not mix field types.
+            Key name of the field. This is going to be the key for populating the value when
+            [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every
+            occurrence of the key will be filled with the same value. Caution: do not mix field types.
         </Attribute>
 
         <Attribute name="page" required="1">The index of the page the field is residing on, starting with 0. Upper limit
@@ -34,12 +36,16 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
             names (e.g. black, red, etc.) or hex color codes. Defaults to `black`.</Attribute>
 
         <Attribute name="h_align" required={false}>Horizontal alignment of the to be filled text.
-            Possible values are `L` for left aligned, `C` for centering and `R` for right aligned text. Defaults to `L`.</Attribute>
+            Possible values are `L` for left aligned, `C` for centering and `R` for right aligned text. Defaults to
+            `L`.</Attribute>
         <Attribute name="v_align" required={false}>Vertical alignment of the to be filled text.
-            Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to `T`.</Attribute>
+            Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to
+            `T`.</Attribute>
 
     </div>
-    <SimpleCodeHighlighter language="json" code={`{
+    <div className="relative">
+        <div className="sm:sticky top-0">
+            <SimpleCodeHighlighter language="json" code={`{
     "bbox": {
         "x": 72.15405575993107,
         "y": 556.1774688664345,
@@ -54,5 +60,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
     "h_align": "L",
     "v_align": "B"
 }`}/>
+        </div>
+    </div>
 </Grid>
 
