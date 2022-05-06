@@ -26,16 +26,16 @@ For [authentication](/api-reference/authentication) provide the `x-api-key` head
         </Attribute>
 
         ### Body attributes
+        <Attribute name={"data"} required={true}>The data should contain a key value mapping reflecting the specified schema of your template</Attribute>
     </div>
     <SimpleCodeHighlighter language="python" code={`import requests
-with open('my-template.pdf, 'rb) as pdf:
-    requests.post("${baseUrl}/templates/{id}/fill",
-        headers={
-            "x-api-key": "your-api-key",
-            "x-test": "true",
-            "content-type": "application/json"
-        },
-        json={"data": {}}
-    )
+requests.post("${baseUrl}/templates/{id}/fill",
+    headers={
+        "x-api-key": "your-api-key",
+        "x-test": "true",
+        "content-type": "application/json"
+    },
+    json={"data": {}}
+)
 `}/>
 </Grid>
