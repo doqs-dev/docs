@@ -3,10 +3,16 @@ import { PropsWithChildren } from "react";
 export type BadgeType = 'success' | 'warning' | 'error' | 'info'
 
 type BadgeProps = {
-  type: BadgeType
+  type: BadgeType,
+  size?: 'sm' | 'md'
 };
 
-export const Badge = ({children, type}: PropsWithChildren<BadgeProps>) => {
+export const Badge = ({children, type, size}: PropsWithChildren<BadgeProps>) => {
+
+  if (!size) {
+    size = 'md'
+  }
+
 
   let className = ''
 
@@ -25,9 +31,14 @@ export const Badge = ({children, type}: PropsWithChildren<BadgeProps>) => {
       break;
   }
 
+  let sizeClass = '';
+  switch (size) {
+    case "md":
+      sizeClass = 'px-3 py-1'
+  }
 
   return (
-      <span className={className + " py-1 px-3 rounded"}>
+      <span className={`${className} ${sizeClass} rounded`}>
         {children}
       </span>
   );
