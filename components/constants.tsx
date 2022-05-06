@@ -1,0 +1,1 @@
+export const baseUrl = 'https://api.doqs.dev/v1'

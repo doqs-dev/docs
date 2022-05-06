@@ -1,0 +1,41 @@
+import {Endpoint} from "../../components/endpoint";
+import {Grid} from "../../components/grid";
+import {Attribute} from "../../components/attribute"; import {
+    SimpleCodeHighlighter
+} from "../../components/code-highlighter"; import {baseUrl} from "../../components/constants";
+
+# Fill template
+
+<Endpoint method="POST" path="/templates/{id}"/>
+<br/>
+
+For [authentication](/api-reference/authentication) provide the `x-api-key` header.
+
+<br/>
+
+## Request
+<Grid>
+    <div>
+        ### Header attributes
+        <Attribute name={"x-test"} required={false}>
+            Control if this request should be counted as a sandbox request or not. If your organization is not
+            subscribed yet this flag is set to `true` by default.
+        </Attribute>
+        <Attribute name={"content-type"} required={true}>
+            Only acceptable content type is `application/json`.
+        </Attribute>
+
+        ### Body attributes
+    </div>
+    <SimpleCodeHighlighter language="python" code={`import requests
+with open('my-template.pdf, 'rb) as pdf:
+    requests.post("${baseUrl}/templates/{id}/fill",
+        headers={
+            "x-api-key": "your-api-key",
+            "x-test": "true",
+            "content-type": "application/json"
+        },
+        json={"data": {}}
+    )
+`}/>
+</Grid>
