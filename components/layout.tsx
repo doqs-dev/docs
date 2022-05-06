@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from './layout.module.css'
+import { Badge } from "./badge";
 
 // @ts-ignore
 export default function Layout({children}) {
@@ -23,8 +24,14 @@ export default function Layout({children}) {
               </li>
               <li className={"uppercase text-gray-500 text-sm my-3"}>API Reference</li>
               <li className={styles.li}><a href="/api-reference/authentication">Authentication</a></li>
-              <li className={styles.li}><a href="/api-reference/create-template">Create template</a></li>
-              <li className={styles.li}><a href="/api-reference/fill-template">Fill template</a></li>
+              <li className={styles.li}><a href="/api-reference/create-template">
+                <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
+                Create template
+              </a></li>
+              <li className={styles.li}><a href="/api-reference/fill-template">
+                <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
+                Fill template
+              </a></li>
             </ul>
 
           </aside>
