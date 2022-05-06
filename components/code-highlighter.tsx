@@ -8,10 +8,15 @@ import tailwindConfig from '../tailwind.config.js'
 const theme = resolveConfig(tailwindConfig).theme
 
 // @ts-ignore
-const light_yellow = theme.colors.amber['200']; //"#e0c46c"
+const lightYellow = theme.colors.amber['200']; //"#e0c46c"
 // @ts-ignore
 const orange = theme.colors.amber['500']; //#cb7832
-
+// @ts-ignore
+const darkGreen = theme.colors.lime['700']//"#6a8759"
+// @ts-ignore
+const black = theme.colors.gray[800]; // #2b2b2b
+// @ts-ignore
+const lightGray = theme.colors.gray[400] // #bababa
 
 // base theme darcula - adjusted colors to match tailwind
 const style: { [key: string]: React.CSSProperties } = {
@@ -19,8 +24,8 @@ const style: { [key: string]: React.CSSProperties } = {
     "display": "block",
     "overflowX": "auto",
     "padding": "0.5em",
-    "background": theme.colors.gray[800], // #2b2b2b
-    "color": theme.colors.gray[400], // #bababa
+    "background": black,
+    "color": lightGray,
   },
   "hljs-strong": {
     "color": "#a8a8a2"
@@ -75,40 +80,40 @@ const style: { [key: string]: React.CSSProperties } = {
     "color": "#b9b9b9"
   },
   "hljs-string": {
-    "color": theme.colors.lime['700']//"#6a8759"
+    "color": darkGreen
   },
   "hljs-subst": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-type": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-built_in": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-builtin-name": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-symbol": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-selector-id": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-selector-attr": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-selector-pseudo": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-template-tag": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-template-variable": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-addition": {
-    "color": light_yellow
+    "color": lightYellow
   },
   "hljs-comment": {
     "color": "#7f7f7f"
