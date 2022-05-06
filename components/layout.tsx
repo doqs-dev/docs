@@ -25,6 +25,10 @@ export default function Layout({children}) {
               <li className={styles.li}><a href="/api-reference/authentication">Authentication</a></li>
               <li className={styles.li}><a href="/api-reference/create-template">Create template</a></li>
               <li className={styles.li}><a href="/api-reference/fill-template">Fill template</a></li>
+
+              <li className={"uppercase text-gray-500 text-sm my-3"}>Fields</li>
+              <li className={styles.li}><a href="/fields/text">Text fields</a></li>
+
             </ul>
 
           </aside>
