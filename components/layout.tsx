@@ -43,9 +43,15 @@ export default function Layout({children}) {
               {children}
             </main>
             <footer>
-              <div className={"ml-8 mt-5"}>
-                Footer
+              <div className="ml-8 mt-5 text-gray-700 grid grid-flow-col sm:auto-cols-max">
+                <span className="mr-10 font-bold">
+                <a href={"https://doqs.dev"}>doqs.dev</a>
+              </span>
+                <nav className="grid grid-flow-col auto-cols-max gap-x-5">
+                  <a href="https://doqs.dev/imprint" title="Imprint">Imprint</a>
+                </nav>
               </div>
+
             </footer>
           </div>
         </div>
