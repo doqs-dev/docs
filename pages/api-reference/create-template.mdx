@@ -27,7 +27,7 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
     </div>
     <SimpleCodeHighlighter language="python"
                            code={`import requests
-with open('my-template.pdf, 'rb) as pdf:
+with open('my-template.pdf', 'rb') as pdf:
     requests.post("${baseUrl}/templates/",
         headers={
             "x-api-key": "your-api-key",
