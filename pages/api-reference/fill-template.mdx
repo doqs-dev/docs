@@ -26,6 +26,9 @@ For [authentication](/api-reference/authentication) provide the `x-api-key` head
         <Attribute name={"content-type"} required={true}>
             Only acceptable content type is `application/json`.
         </Attribute>
+        <Attribute name={"Accept"} required={true}>
+            Your application should accept `application/pdf`.
+        </Attribute>
 
         ### Body attributes
         <Attribute name={"data"} required={true}>The data should contain a key value mapping reflecting the specified schema of your template.</Attribute>
