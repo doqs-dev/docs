@@ -2,7 +2,7 @@ import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 import {Endpoint} from "../../components/endpoint";
 import {Grid} from "../../components/grid"; import {Attribute} from "../../components/attribute"; import {
     baseUrl
-} from "../../components/constants";
+} from "../../components/constants"; import {Callout} from "../../components/callout";
 
 # Create a template
 
@@ -21,8 +21,12 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
         <br/>
 
         ### Body
-        <Attribute name="file" required={true}>Multipart binary file pdf file that is going to be used as a template to
-            fill.</Attribute>
+        <Attribute name="file" required={true}>
+            Multipart binary file pdf file that is going to be used as a template to fill.
+            <Callout>
+                The pdf file must be less than 5MB and cannot contain more than 100 pages.
+            </Callout>
+        </Attribute>
         <br/>
     </div>
     <SimpleCodeHighlighter language="python"
