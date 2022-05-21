@@ -5,6 +5,8 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
 
 # Date field
 
+Add a date / time or datetime field to your template and control the output format with the `format` and `locale` attributes.
+
 ### Attributes
 <Grid>
     <div>
@@ -42,7 +44,8 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
             Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to
             `T`.</Attribute>
 
-        <Attribute name="locale" required={true}>The locale which should be used for formatting the datetime.</Attribute>
+        <Attribute name="locale" required={true}>The locale which should be used for formatting the
+            datetime.</Attribute>
         <Attribute name="format" required={true}>
             Format for the resulting datetime. Examples for date '2022-05-21 21:16:00+02:00':
             * `%Y-%m-%d` will output `2022-05-21`
