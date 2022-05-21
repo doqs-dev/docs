@@ -3,7 +3,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
 } from "../../components/code-highlighter";
 
 
-# Text field
+# Checkbox field
 
 ### Attributes
 <Grid>
@@ -34,6 +34,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
         <Attribute name={"eval"} required="1">
             String or boolean value to evaluate against if the checkbox is checked. E.g. the check box is checked if the
             equal boolean value is provided or if the string is matching with te value of the field.
+            A string must be longer than 1 character and the evaluation is case sensitive.
         </Attribute>
     </div>
     <div className="relative">
