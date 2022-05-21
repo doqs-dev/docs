@@ -1,0 +1,65 @@
+import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
+    SimpleCodeHighlighter
+} from "../../components/code-highlighter"; import {Callout} from "../../components/callout";
+
+
+# Checkbox field
+
+Add a checkbox field and control on which condition it should be checked. The checkbox style is currently limited to a cross.
+
+### Attributes
+<Grid>
+    <div>
+        <Attribute name="bbox.x" required="1">
+            X coordinate of the lower left corner of the bounding box of the field
+        </Attribute>
+        <Attribute name="bbox.y" required="1">
+            Y coordinate of the lower left corner of the bounding box of the field
+        </Attribute>
+        <Attribute name="bbox.width" required="1">
+            Width of the bounding box of the field
+        </Attribute>
+        <Attribute name="bbox.height" required="1">
+            Height of the bounding box of the field
+        </Attribute>
+
+        <Callout>
+            The field is rendered as a square. The bounding box height is determining the size of the square.
+            The square is centered horizontally in the bounding box.
+        </Callout>
+        <br/>
+
+        <Attribute name="name" required="1">
+            Key name of the field. This is going to be the key for populating the value when
+            [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every
+            occurrence of the key will be filled with the same value. Caution: do not mix field types.
+        </Attribute>
+
+        <Attribute name="page" required="1">The index of the page the field is residing on, starting with 0. Upper limit
+            is the number of pages in the template</Attribute>
+        <Attribute name="type" required="1">Identifier of the type of the field. Always set to `check`.</Attribute>
+
+        <Attribute name={"eval"} required="1">
+            String or boolean value to evaluate against if the checkbox is checked. E.g. the check box is checked if the
+            equal boolean value is provided or if the string is matching with te value of the field.
+            A string must be longer than 1 character and the evaluation is case sensitive.
+        </Attribute>
+    </div>
+    <div className="relative">
+        <div className="sm:sticky top-0">
+            <SimpleCodeHighlighter language="json" code={`{
+    "bbox": {
+        "x": 72.15405575993107,
+        "y": 556.1774688664345,
+        "width": 201.3371400656083,
+        "height": 11.637984974890685
+    },
+    "name": "key",
+    "page": 0,
+    "type": "check",
+    "eval": true
+}`}/>
+        </div>
+    </div>
+</Grid>
+
