@@ -1,6 +1,6 @@
 import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
     SimpleCodeHighlighter
-} from "../../components/code-highlighter";
+} from "../../components/code-highlighter"; import {Callout} from "../../components/callout";
 
 
 # Checkbox field
@@ -20,6 +20,12 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
         <Attribute name="bbox.height" required="1">
             Height of the bounding box of the field
         </Attribute>
+
+        <Callout>
+            The field is rendered as a square. The bounding box height is determining the size of the square.
+            The square is centered horizontally in the bounding box.
+        </Callout>
+        <br/>
 
         <Attribute name="name" required="1">
             Key name of the field. This is going to be the key for populating the value when
