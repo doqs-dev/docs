@@ -18,7 +18,7 @@ export default function Layout({children}) {
               <span className={"inline-block pl-2 text-sm"}>doqs</span>
             </div>
 
-            <ul className={"text-sm"}>
+            <ul className={"text-sm list-none"}>
               <li className={styles.li}>
                 <a href="/">Introduction</a>
               </li>
@@ -36,6 +36,7 @@ export default function Layout({children}) {
               <li className={"uppercase text-gray-500 text-sm my-3"}>Fields</li>
               <li className={styles.li}><a href="/fields/text">Text field</a></li>
               <li className={styles.li}><a href="/fields/checkbox">Checkbox field</a></li>
+              <li className={styles.li}><a href="/fields/date">Date field</a></li>
             </ul>
 
           </aside>
