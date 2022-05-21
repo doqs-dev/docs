@@ -7,7 +7,7 @@ function MyApp({Component, pageProps}: AppProps) {
   return (
       <>
         <Head>
-          <script async data-no-cookie data-token="6QEUMULHMJQM" src="https://cdn.splitbee.io/sb.js"></script>
+          <script async data-no-cookie src="https://cdn.splitbee.io/sb.js"></script>
         </Head>
         <Layout>
           <Component {...pageProps} />
