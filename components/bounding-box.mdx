@@ -1,14 +1,20 @@
 import {Attribute} from "./attribute";
 
-<Attribute name="bbox.x" required="1">
-    X coordinate of the lower left corner of the bounding box of the field
-</Attribute>
-<Attribute name="bbox.y" required="1">
-    Y coordinate of the lower left corner of the bounding box of the field
-</Attribute>
-<Attribute name="bbox.width" required="1">
-    Width of the bounding box of the field
-</Attribute>
-<Attribute name="bbox.height" required="1">
-    Height of the bounding box of the field
-</Attribute>
+export const BoundingBox = () => {
+    return (
+        <>
+            <Attribute name="bbox.x" required="1">
+                X coordinate of the lower left corner of the bounding box of the field
+            </Attribute>
+            <Attribute name="bbox.y" required="1">
+                Y coordinate of the lower left corner of the bounding box of the field
+            </Attribute>
+            <Attribute name="bbox.width" required="1">
+                Width of the bounding box of the field
+            </Attribute>
+            <Attribute name="bbox.height" required="1">
+                Height of the bounding box of the field
+            </Attribute>
+        </>
+    )
+}
