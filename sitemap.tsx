@@ -1,14 +1,9 @@
 import React from "react";
-import { ServerResponse } from "http";
 import fs from "fs";
 
-const Sitemap = () => {
-};
-
-export default Sitemap;
 
 // @ts-ignore
-export const getServerSideProps = ({res}) => {
+export const generateSitemap = () => {
 
   const baseUrl = 'https://docs.doqs.dev';
 
@@ -51,11 +46,5 @@ export const getServerSideProps = ({res}) => {
     </urlset>
   `;
 
-  res.setHeader("Content-Type", "text/xml");
-  res.write(sitemap);
-  res.end();
-
-  return {
-    props: {},
-  };
+  fs.writeSync(fs.openSync('public/sitemap.xml', 'w'), sitemap);
 };
