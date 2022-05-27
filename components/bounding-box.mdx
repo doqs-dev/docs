@@ -1,0 +1,35 @@
+import {Attribute} from "./attribute"; import {Callout} from "./callout";
+
+export const BoundingBox = () => {
+    return (
+        <>
+            <Attribute name="bbox.x" required="1">
+                X coordinate of the lower left corner of the bounding box of the field.
+                Needs to be greater than or equal to 0.
+            </Attribute>
+            <Attribute name="bbox.y" required="1">
+                Y coordinate of the lower left corner of the bounding box of the field.
+                Needs to be greater than or equal to 0.
+            </Attribute>
+            <Attribute name="bbox.width" required="1">
+                Width of the bounding box of the field. Needs to be greater or equal to 1.
+            </Attribute>
+            <Attribute name="bbox.height" required="1">
+                Height of the bounding box of the field. Needs to be greater or equal to 1.
+            </Attribute>
+
+            <Callout>
+                <p>
+                    The units of the bounding box are points. They are mainly driven by the page size and resolution of
+                    the
+                    underlying PDF document.
+                    For example an A4 page with width of 210 mm and height of 297 mm and a default resolution of 72 DPI
+                    results in
+                    a page width of 595.27 and height of 841.88 pts.
+                    The root coordinate (0, 0) is the lower left corner of the page.
+                </p>
+            </Callout>
+            <br/>
+        </>
+    );
+}
