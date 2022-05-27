@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 export const Callout = ({children}: PropsWithChildren<any>) => {
 
   return (
-      <div className="flex border border-primary px-2 pt-2 -pb-3 border-2 bg-primary/10 ">
+      <div className="flex border border-primary/75 px-2 pt-2 -pb-3 border-2 bg-primary/10 ">
         <div className="text-primary mr-1">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd"
