@@ -21,12 +21,16 @@ export const getServerSideProps = ({res}) => {
         ].includes(staticPage);
       })
       .map((page) => {
-        return !fs.statSync(`pages/${page}`).isDirectory() ? page : fs.readdirSync(`pages/${page}`,).map((subPage) => `${page}/${subPage}`);
+        return !fs.statSync(`pages/${page}`).isDirectory() ? page : fs.readdirSync(`pages/${page}`,)
+            // add parent folder as path prefix
+            .map((subPage) => `${page}/${subPage}`);
       })
       .flat()
       .map((staticPagePath) => {
         // concat and strip file ending
-        return `${baseUrl}/${staticPagePath}`.replace('.mdx', '');
+        return `${baseUrl}/${staticPagePath}`.replace('.mdx', '')
+            // replace index to acutal index page
+            .replace('index', '');
       });
 
 
