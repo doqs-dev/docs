@@ -1,9 +1,8 @@
-import React from "react";
-import fs from "fs";
+const fs = require('fs')
 
 
 // @ts-ignore
-export const generateSitemap = () => {
+const generateSitemap = () => {
 
   const baseUrl = 'https://docs.doqs.dev';
 
@@ -48,3 +47,5 @@ export const generateSitemap = () => {
 
   fs.writeSync(fs.openSync('public/sitemap.xml', 'w'), sitemap);
 };
+
+generateSitemap();
