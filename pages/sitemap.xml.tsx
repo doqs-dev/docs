@@ -25,7 +25,8 @@ export const getServerSideProps = ({res}) => {
       })
       .flat()
       .map((staticPagePath) => {
-        return `${baseUrl}/${staticPagePath}`;
+        // concat and strip file ending
+        return `${baseUrl}/${staticPagePath}`.replace('.mdx', '');
       });
 
 
