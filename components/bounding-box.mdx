@@ -1,4 +1,4 @@
-import {Attribute} from "./attribute";
+import {Attribute} from "./attribute"; import {Callout} from "./callout";
 
 export const BoundingBox = () => {
     return (
@@ -16,11 +16,18 @@ export const BoundingBox = () => {
                 Height of the bounding box of the field.
             </Attribute>
 
-            The units of the bounding box are points. They are mainly driven by the page size and resolution of the
-            underlying PDF document.
-            For example an A4 page with width of 210mm and height of 297mm and a default resolution of 72 DPI results in
-            a page width of 595.27 and height of 841.88 pts.
-            The root coordinate (0, 0) is the lower left corner of the page.
+            <Callout>
+                <p>
+                    The units of the bounding box are points. They are mainly driven by the page size and resolution of
+                    the
+                    underlying PDF document.
+                    For example an A4 page with width of 210 mm and height of 297 mm and a default resolution of 72 DPI
+                    results in
+                    a page width of 595.27 and height of 841.88 pts.
+                    The root coordinate (0, 0) is the lower left corner of the page.
+                </p>
+            </Callout>
+            <br/>
         </>
     )
 }
