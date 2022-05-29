@@ -1,6 +1,6 @@
 import { SimpleCodeHighlighter } from "./code-highlighter";
 import { baseUrl } from "./constants";
-import { useCallback, useState } from "react";
+import { useCallback, useState, SyntheticEvent } from "react";
 
 type Props = {
   method: 'post' | 'get' | 'put' | 'delete',
@@ -19,34 +19,38 @@ export const RequestExample = (props: Props) => {
 
   const [value, setValue] = useState<Language>('Python')
 
-  const handleChange = useCallback((val: Language) => {
-    setValue(val);
-  }, []);
-
-  return (
-      <div>
-        <div className={'py-1.5 bg-gray-900 text-right'}>
-          <select className={'appearance-none bg-transparent text-gray-200 px-2 mr-2 outline-none'} onChange={handleChange}>
-            {LANGUAGES.map(lang => <option key={lang}
-                                           value={lang}>{lang}</option>)}
-          </select>
-        </div>
-        <div>
-          <SimpleCodeHighlighter language="python"
-                                 code={`
+  const handleChange = (val: SyntheticEvent<HTMLSelectElement>) => {
+    console.debug('handleChange', val);
+    setValue(val.currentTarget.value as Language);
+  };
+  const codeMap: { [key: string]: string } = {
+    Python: `
 import requests
 ${props.file ? `${props.file.variable} = open('${props.file.fileName}', 'rb')` : ''}
 resp = requests.post("${baseUrl}${props.url}",
     headers=${JSON.stringify(props.headers)},
     ${props.file || props.json ?
-                                     (
-                                         (props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : '') +
-                                         (props.json ? `json=${JSON.stringify(props.json)},` : '')
-                                     ) : ''
-                                 }
+        (
+            (props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : '') +
+            (props.json ? `json=${JSON.stringify(props.json)},` : '')
+        ) : ''
+    }
 )
-`.trimStart()}
-          />
+`.trimStart()
+  }
+
+  console.log(codeMap[value], value);
+  return (
+      <div>
+        <div className={'py-1.5 bg-gray-900 text-right'}>
+          <select className={'appearance-none bg-transparent text-gray-200 px-2 mr-2 outline-none'}
+                  onChange={handleChange}>
+            {LANGUAGES.map(lang => <option key={lang}
+                                           value={lang}>{lang}</option>)}
+          </select>
+        </div>
+        <div>
+          {value && (<SimpleCodeHighlighter language={value.toString().toLowerCase()} code={codeMap[value]}/>)}
         </div>
       </div>
   )
