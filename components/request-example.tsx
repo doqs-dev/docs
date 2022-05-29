@@ -61,14 +61,3 @@ ${props.json? `-d '${JSON.stringify(props.json)}'` : ''}
   )
 
 };
-
-/* curl --request POST \
-  --url https://api.doqs.dev/v1/templates/%7Bid%7D/fill \
-  --header 'Content-Type: application/json' \
-  --header 'x-api-key: your-api-key' \
-  --data '{
-	"data": {}
-}'
-*
-*
-* */
