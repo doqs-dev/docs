@@ -30,19 +30,24 @@ import requests
 ${props.file ? `${props.file.variable} = open('${props.file.fileName}', 'rb')` : ''}
 resp = requests.post("${baseUrl}${props.url}",
     headers=${JSON.stringify(props.headers)},
-    ${props.file || props.json ?
+    ${
         (
             (props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : '') +
             (props.json ? `json=${JSON.stringify(props.json)},` : '')
-        ) : ''
+        )
     }
 )
 `.trimStart(),
+    // CURL
     cURL: `curl --request ${props.method} \\
 --url "${baseUrl}${props.url}" \\
-${ Object.entries(props.headers).map(val =>  `-H "${val[0]}: ${val[1]}"` ).join(' \\ \n') } \\
-${props.json? `-d '${JSON.stringify(props.json)}'` : ''}
-`}
+${Object.entries(props.headers).map(val => `-H "${val[0]}: ${val[1]}"`).join(' \\ \n')} \\
+${
+        (props.json ? `-d '${JSON.stringify(props.json)}'` : '') +
+        (props.file ? `-F "${props.file.key}=@${props.file.fileName}"` : '')
+    }
+`
+  }
 
   console.log(codeMap[value], value);
   return (
