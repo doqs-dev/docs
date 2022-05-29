@@ -1,6 +1,7 @@
 import { SimpleCodeHighlighter } from "./code-highlighter";
 import { baseUrl } from "./constants";
-import { useCallback, useState, SyntheticEvent } from "react";
+import { useCallback, useState, SyntheticEvent, useMemo } from "react";
+import ReactTooltip from "react-tooltip";
 
 type Props = {
   method: 'post' | 'get' | 'put' | 'delete',
@@ -23,30 +24,32 @@ export const RequestExample = (props: Props) => {
     setValue(val.currentTarget.value as Language);
   };
 
-  const codeMap: { [key: string]: string } = {
-    Python: `
+  const codeMap: { [key: string]: string } = useMemo(() => {
+    return {
+      Python: `
 import requests
 ${props.file ? `${props.file.variable} = open('${props.file.fileName}', 'rb')` : ''}
 resp = requests.post("${baseUrl}${props.url}",
     headers=${JSON.stringify(props.headers)},
     ${
-        (
-            (props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : '') +
-            (props.json ? `json=${JSON.stringify(props.json)},` : '')
-        )
-    }
+          (
+              (props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : '') +
+              (props.json ? `json=${JSON.stringify(props.json)},` : '')
+          )
+      }
 )
 `.trimStart(),
-    // CURL
-    cURL: `curl --request ${props.method} \\
+      // CURL
+      cURL: `curl --request ${props.method} \\
 --url "${baseUrl}${props.url}" \\
 ${Object.entries(props.headers).map(val => `-H "${val[0]}: ${val[1]}"`).join(' \\ \n')} \\
 ${
-        (props.json ? `-d '${JSON.stringify(props.json)}'` : '') +
-        (props.file ? `-F "${props.file.key}=@${props.file.fileName}"` : '')
-    }
+          (props.json ? `-d '${JSON.stringify(props.json)}'` : '') +
+          (props.file ? `-F "${props.file.key}=@${props.file.fileName}"` : '')
+      }
 `
-  }
+    }
+  }, [props]);
 
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(codeMap[value]);
@@ -60,7 +63,7 @@ ${
             {LANGUAGES.map(lang => <option key={lang}
                                            value={lang}>{lang}</option>)}
           </select>
-          <button className={'text-white'} title={'Copy to clipboard'} onClick={copyToClipboard}>
+          <button className={'text-white'} onClick={copyToClipboard}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-4" viewBox="0 0 20 20" fill="currentColor">
               <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"/>
               <path
