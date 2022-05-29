@@ -1,7 +1,6 @@
 import { SimpleCodeHighlighter } from "./code-highlighter";
 import { baseUrl } from "./constants";
 import { useCallback, useState, SyntheticEvent, useMemo } from "react";
-import ReactTooltip from "react-tooltip";
 
 type Props = {
   method: 'post' | 'get' | 'put' | 'delete',
