@@ -20,7 +20,6 @@ export const RequestExample = (props: Props) => {
   const [value, setValue] = useState<Language>('Python')
 
   const handleChange = (val: SyntheticEvent<HTMLSelectElement>) => {
-    console.debug('handleChange', val);
     setValue(val.currentTarget.value as Language);
   };
 
@@ -53,7 +52,6 @@ ${
     navigator.clipboard.writeText(codeMap[value]);
   }, [value, codeMap]);
 
-  console.log(codeMap[value], value);
   return (
       <div>
         <div className={'py-1.5 bg-gray-900 flex'}>
