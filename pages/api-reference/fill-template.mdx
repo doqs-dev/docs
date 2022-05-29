@@ -2,7 +2,9 @@ import {Endpoint} from "../../components/endpoint";
 import {Grid} from "../../components/grid";
 import {Attribute} from "../../components/attribute"; import {
     SimpleCodeHighlighter
-} from "../../components/code-highlighter"; import {baseUrl} from "../../components/constants";
+} from "../../components/code-highlighter"; import {baseUrl} from "../../components/constants"; import {
+    RequestExample
+} from "../../components/request-example";
 
 # Fill a template
 
@@ -31,21 +33,17 @@ For [authentication](/api-reference/authentication) provide the `x-api-key` head
         </Attribute>
 
         ### Body attributes
-        <Attribute name={"data"} required={true}>The data should contain a key value mapping reflecting the specified schema of your template.</Attribute>
+        <Attribute name={"data"} required={true}>The data should contain a key value mapping reflecting the specified
+            schema of your template.</Attribute>
     </div>
-    <SimpleCodeHighlighter language="python" code={`import requests
-requests.post("${baseUrl}/templates/{id}/fill",
-    headers={
+    <RequestExample method={'post'} url={'/templates/{id}/fill'} headers={{
         "x-api-key": "your-api-key",
         "x-test": "true",
         "content-type": "application/json"
-    },
-    json={"data": {}}
-)
-`}/>
+    }} json={{"data": {}}}></RequestExample>
 </Grid>
 
-<br />
+<br/>
 
 ## Response
 In case of a successful request, the endpoint will return a byte stream of the filled pdf document.
@@ -53,7 +51,7 @@ In case of a successful request, the endpoint will return a byte stream of the f
 ### Headers
 <Grid>
     <div>
-        <Attribute name={"content-type"} >The content type header will be set to application/pdf.</Attribute>
+        <Attribute name={"content-type"}>The content type header will be set to application/pdf.</Attribute>
     </div>
-    <div />
+    <div/>
 </Grid>

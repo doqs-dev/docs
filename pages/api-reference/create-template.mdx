@@ -2,7 +2,9 @@ import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 import {Endpoint} from "../../components/endpoint";
 import {Grid} from "../../components/grid"; import {Attribute} from "../../components/attribute"; import {
     baseUrl
-} from "../../components/constants"; import {Callout} from "../../components/callout";
+} from "../../components/constants"; import {Callout} from "../../components/callout"; import {
+    RequestExample
+} from "../../components/request-example";
 
 # Create a template
 
@@ -29,18 +31,12 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
         </Attribute>
         <br/>
     </div>
-    <SimpleCodeHighlighter language="python"
-                           code={`import requests
-with open('my-template.pdf', 'rb') as pdf:
-    requests.post("${baseUrl}/templates/",
-        headers={
+    <div>
+        <RequestExample method={"post"} headers={{
             "x-api-key": "your-api-key",
             "content-type": "multipart/form-data"
-        },
-        files={"file": ("my-template.pdf", pdf)}
-    )
-`}
-    />
+        }} url={"/templates"} file={{key: 'file', fileName: 'my-template.pdf', variable: 'pdf'}}></RequestExample>
+    </div>
 </Grid>
 
 
