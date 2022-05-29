@@ -19,9 +19,14 @@ import requests
 ${props.file ? `${props.file.variable} = open('${props.file.fileName}', 'rb')` : ''}
 resp = requests.post("${baseUrl}${props.url}",
     headers=${JSON.stringify(props.headers)},
-    ${props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : ''} ${props.json ? `\njson=${JSON.stringify(props.json)}` : ''} 
+    ${props.file || props.json ?
+                                   (
+                                       (props.file ? `files={"${props.file?.key}": (${props.file?.fileName}, ${props.file?.variable})},` : '') +
+                                       (props.json ? `json=${JSON.stringify(props.json)},` : '')
+                                   ) : ''
+                               }
 )
-`.trim()}
+`.trimStart()}
         />
       </>
   )
