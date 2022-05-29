@@ -62,7 +62,7 @@ ${
             {LANGUAGES.map(lang => <option key={lang}
                                            value={lang}>{lang}</option>)}
           </select>
-          <button className={'text-white'} onClick={copyToClipboard}>
+          <button className={'text-white'} onClick={copyToClipboard} title={'Copy to clipboard'}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-4" viewBox="0 0 20 20" fill="currentColor">
               <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"/>
               <path
