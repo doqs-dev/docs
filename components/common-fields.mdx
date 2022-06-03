@@ -1,6 +1,6 @@
 import {Attribute} from "./attribute"; import {Callout} from "./callout";
 
-export const BoundingBox = () => {
+export const CommonFields = () => {
     return (
         <>
             <Attribute name="bbox.x" required="1">
@@ -30,6 +30,19 @@ export const BoundingBox = () => {
                 </p>
             </Callout>
             <br/>
+            <Attribute name="name" required="1">
+                Key name of the field. This is going to be the key for populating the value when
+                [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every
+                occurrence of the key will be filled with the same value. Caution: do not mix field types.
+            </Attribute>
+
+            <Attribute name="page" required="1">The index of the page the field is residing on, starting with 0. Upper
+                limit
+                is the number of pages in the template</Attribute>
+
+            <Attribute name="required" required="false">
+                Is the key required in the payload when generating the PDF. Default is `true`
+            </Attribute>
         </>
     );
 }
