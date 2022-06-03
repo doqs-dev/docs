@@ -1,6 +1,6 @@
 import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
     SimpleCodeHighlighter
-} from "../../components/code-highlighter"; import {BoundingBox} from "../../components/bounding-box.mdx";
+} from "../../components/code-highlighter"; import {CommonFields} from "../../components/common-fields.mdx";
 
 
 # Text field
@@ -8,16 +8,8 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
 ### Attributes
 <Grid>
     <div>
-        <BoundingBox/>
+        <CommonFields/>
 
-        <Attribute name="name" required="1">
-            Key name of the field. This is going to be the key for populating the value when
-            [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every
-            occurrence of the key will be filled with the same value. Caution: do not mix field types.
-        </Attribute>
-
-        <Attribute name="page" required="1">The index of the page the field is residing on, starting with 0. Upper limit
-            is the number of pages in the template</Attribute>
         <Attribute name="type" required="1">Identifier of the type of the field. Always set to `text`.</Attribute>
 
         <Attribute name="font_size" required={false}>Specify the font size to be filled with. Defaults to 9</Attribute>
@@ -43,6 +35,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
     },
     "name": "key",
     "page": 0,
+    "required": true,
     "type": "text",
     "font_size": 9,
     "color": "black",

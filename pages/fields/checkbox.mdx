@@ -1,7 +1,7 @@
 import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
     SimpleCodeHighlighter
 } from "../../components/code-highlighter"; import {Callout} from "../../components/callout";
-import {BoundingBox} from "../../components/bounding-box.mdx"
+import {CommonFields} from "../../components/common-fields.mdx"
 
 
 # Checkbox field
@@ -11,22 +11,13 @@ Add a checkbox field and control on which condition it should be checked. The ch
 ### Attributes
 <Grid>
     <div>
-        <BoundingBox/>
-
         <Callout>
             The field is rendered as a square. The bounding box height is determining the size of the square.
             The square is centered horizontally in the bounding box.
         </Callout>
-        <br/>
 
-        <Attribute name="name" required="1">
-            Key name of the field. This is going to be the key for populating the value when
-            [filling](/api-reference/fill-template) the template. This key name can be used multiple times, every
-            occurrence of the key will be filled with the same value. Caution: do not mix field types.
-        </Attribute>
+        <CommonFields/>
 
-        <Attribute name="page" required="1">The index of the page the field is residing on, starting with 0. Upper limit
-            is the number of pages in the template</Attribute>
         <Attribute name="type" required="1">Identifier of the type of the field. Always set to `check`.</Attribute>
 
         <Attribute name={"eval"} required="1">
@@ -46,6 +37,7 @@ Add a checkbox field and control on which condition it should be checked. The ch
     },
     "name": "key",
     "page": 0,
+    "required": true,
     "type": "check",
     "eval": true
 }`}/>
