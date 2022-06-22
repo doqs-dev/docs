@@ -51,6 +51,7 @@ export default function Layout({children}) {
               </span>
                 <nav className="grid grid-flow-col auto-cols-max gap-x-5">
                   <a href="https://doqs.dev/imprint" title="Imprint">Imprint</a>
+                  <a href="https://doqs.dev/privacy-policy" title="Imprint">Privacy</a>
                 </nav>
               </div>
 
