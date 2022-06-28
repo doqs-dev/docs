@@ -1,15 +1,22 @@
 import {SimpleCodeHighlighter} from "../../components/code-highlighter";
 import {Endpoint} from "../../components/endpoint";
 import {Grid} from "../../components/grid"; import {Attribute} from "../../components/attribute"; import {
-    baseUrl
-} from "../../components/constants"; import {Callout} from "../../components/callout"; import {
-    RequestExample
-} from "../../components/request-example";
+    Callout
+} from "../../components/callout"; import {RequestExample} from "../../components/request-example"; import Head
+    from "next/head";
+
+<Head>
+    <title>Create a template | doqs.dev</title>
+</Head>
 
 # Create a template
 
 <Endpoint method="POST" path="/template"/>
 <br/>
+
+Use this endpoint to create a template, by uploading a PDF file. The name of the template will be deducted from the filename.
+If the PDF file contains a fillable form, the fields of that will be detected and added to the template directly.
+
 
 For [authentication](/api-reference/authentication)  provide `x-api-key` header.
 
@@ -52,8 +59,7 @@ For [authentication](/api-reference/authentication)  provide `x-api-key` header.
         <Attribute name="id">Unique identifier for the template</Attribute>
         <Attribute name="name">Name of the template, this is prefilled from the filename of the uploaded
             file.</Attribute>
-        <Attribute name="fields">List of fields in the template. Always empty for now (Planned feature: automatically
-            extracting and adding fields from the template)</Attribute>
+        <Attribute name="fields">List of fields in the template. It will contain entries if the PDF contained a fillable form.</Attribute>
     </div>
 
     <SimpleCodeHighlighter language="json"

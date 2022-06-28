@@ -1,8 +1,11 @@
 import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
     SimpleCodeHighlighter
 } from "../../components/code-highlighter"; import {Callout} from "../../components/callout";
-import {CommonFields} from "../../components/common-fields.mdx"
+import {CommonFields} from "../../components/common-fields.mdx"; import Head from "next/head";
 
+<Head>
+    <title>Checkbox Field | doqs.dev</title>
+</Head>
 
 # Checkbox field
 
@@ -45,3 +48,8 @@ Add a checkbox field and control on which condition it should be checked. The ch
     </div>
 </Grid>
 
+
+### Radio groups
+Create a radio group by combining multiple checkbox fields with the same name and different evaluations.
+An example radio group for a binary question will result in the options `true` (yes) and `false` (no).
+It can be achieved by creating two checkbox fields with eval `true` and `false` on the same name e.g. `question_yn`.

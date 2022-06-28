@@ -1,10 +1,13 @@
 import {Endpoint} from "../../components/endpoint";
 import {Grid} from "../../components/grid";
 import {Attribute} from "../../components/attribute"; import {
-    SimpleCodeHighlighter
-} from "../../components/code-highlighter"; import {baseUrl} from "../../components/constants"; import {
     RequestExample
-} from "../../components/request-example";
+} from "../../components/request-example"; import Head from "next/head";
+
+
+<Head>
+    <title>Fill your PDF template | doqs.dev</title>
+</Head>
 
 # Fill a template
 
@@ -22,7 +25,7 @@ For [authentication](/api-reference/authentication) provide the `x-api-key` head
     <div>
         ### Header attributes
         <Attribute name={"x-test"} required={false}>
-            Control if this request should be counted as a sandbox request or not. If your organization is not
+            Control if this request should be counted as a sandbox request and not be billed. If your organization is not
             subscribed yet this flag is set to `true` by default.
         </Attribute>
         <Attribute name={"content-type"} required={true}>

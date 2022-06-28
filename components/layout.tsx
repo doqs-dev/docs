@@ -7,7 +7,7 @@ export default function Layout({children}) {
   return (
       <>
         <Head>
-          <title>Documentation - doqs.dev</title>
+          <title>Documentation | doqs.dev</title>
           <link rel="icon" href="/favicon.ico"/>
         </Head>
         <div className="flex divide-x-2">
@@ -16,6 +16,10 @@ export default function Layout({children}) {
             <div id="sidebar-header" className="my-3">
               <img src="/logo.svg" width={20} alt="Logo" className={"inline-block"}/>
               <span className={"inline-block pl-2 text-sm"}>doqs</span>
+            </div>
+
+            <div className={"my-3"}>
+              <a className="py-1 text-primary" href="https://app.doqs.dev/signup">Start for free!</a>
             </div>
 
             <ul className={"text-sm list-none"}>
@@ -51,6 +55,7 @@ export default function Layout({children}) {
               </span>
                 <nav className="grid grid-flow-col auto-cols-max gap-x-5">
                   <a href="https://doqs.dev/imprint" title="Imprint">Imprint</a>
+                  <a href="https://doqs.dev/privacy-policy" title="Imprint">Privacy</a>
                 </nav>
               </div>
 
