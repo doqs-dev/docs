@@ -41,6 +41,7 @@ export default function Layout({children}) {
               <li className={styles.li}><a href="/fields/text">Text field</a></li>
               <li className={styles.li}><a href="/fields/checkbox">Checkbox field</a></li>
               <li className={styles.li}><a href="/fields/date">Date field</a></li>
+              <li className={styles.li}><a href="/fields/image">Image field</a></li>
             </ul>
 
           </aside>
