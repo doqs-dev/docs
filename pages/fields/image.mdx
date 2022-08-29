@@ -8,7 +8,9 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
     <title>Image Field | doqs.dev</title>
 </Head>
 
-# Text field
+# Image field
+
+An image field rendering the provided image within the bounding box defined. The aspect ratio of the image is preserved.
 
 ### Attributes
 <Grid>
@@ -41,4 +43,17 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
         </div>
     </div>
 </Grid>
+
+<br/>
+
+### Providing the image
+
+Example: your image field has the name `image`, then you need to provide the value for the image as a base64.
+To achieve this include in your request:
+<SimpleCodeHighlighter language="json" code={`{
+    "image": {
+        "type": "base64",
+        "value": "<<your base64 value>>"
+    }
+}`}/>
 
