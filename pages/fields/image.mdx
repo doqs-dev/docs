@@ -1,0 +1,65 @@
+import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
+    SimpleCodeHighlighter
+} from "../../components/code-highlighter"; import {CommonFields} from "../../components/common-fields.mdx"; import Head
+    from "next/head";
+
+
+<Head>
+    <title>Image Field | doqs.dev</title>
+</Head>
+
+# Image field
+
+An image field rendering the provided image within the bounding box defined. The aspect ratio of the image is preserved.
+
+### Attributes
+<Grid>
+    <div>
+        <CommonFields/>
+
+        <Attribute name="type" required="1">Identifier of the type of the field. Always set to `image`.</Attribute>
+
+        <Attribute name="anchor" required="1">Anchor of how to place the image in the bounding box.
+            The image is always scaled preserving the aspect ratio of the input to be contained within the bounding
+            box. Possible values are `nw`, `n`, `ne`, `w`, `c`, `e`, `sw`, `s`, `se`. Defaults to `c`.</Attribute>
+
+
+    </div>
+    <div className="relative">
+        <div className="sm:sticky top-0">
+            <SimpleCodeHighlighter language="json" code={`{
+    "bbox": {
+        "x": 72.15405575993107,
+        "y": 556.1774688664345,
+        "width": 201.3371400656083,
+        "height": 11.637984974890685
+    },
+    "name": "key",
+    "page": 0,
+    "required": true,
+    "type": "image",
+    "anchor": "c"
+}`}/>
+        </div>
+    </div>
+</Grid>
+
+<br/>
+
+### Providing the image
+
+Example: your image field has the name `image`, then you need to provide the value for the image as a base64 string.
+To achieve this, include in your request:
+<SimpleCodeHighlighter language="json" code={`{
+    "image": {
+        "type": "base64",
+        "value": "<<your base64 value>>"
+    }
+}`}/>
+
+<br/>
+
+or the simplified version for base64 data:
+<SimpleCodeHighlighter language="json" code={`{
+    "image": "<<your base64 value>>"
+}`}/>

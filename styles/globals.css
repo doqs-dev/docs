@@ -21,11 +21,11 @@ h1 {
 }
 
 h2 {
-    @apply mb-2 mt-1 font-bold text-xl;
+    @apply my-4 mt-1 font-bold text-xl;
 }
 
 h3 {
-    @apply mb-2 font-bold text-base text-gray-700;
+    @apply my-3 font-bold text-base text-gray-700;
 }
 
 
