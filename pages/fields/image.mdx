@@ -48,7 +48,7 @@ An image field rendering the provided image within the bounding box defined. The
 
 ### Providing the image
 
-Example: your image field has the name `image`, then you need to provide the value for the image as a base64.
+Example: your image field has the name `image`, then you need to provide the value for the image as a base64 string.
 To achieve this, include in your request:
 <SimpleCodeHighlighter language="json" code={`{
     "image": {
@@ -57,3 +57,9 @@ To achieve this, include in your request:
     }
 }`}/>
 
+<br/>
+
+or the simplified version for base64 data:
+<SimpleCodeHighlighter language="json" code={`{
+    "image": "<<your base64 value>>"
+}`}/>
