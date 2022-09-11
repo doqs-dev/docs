@@ -1,4 +1,4 @@
-# 📄 [Documentation for doqs](docs.doqs.dev) 
+# 📄 [Documentation for doqs](https://docs.doqs.dev) 
 This is the official repository for documenting the doqs API.
 With the doqs API you can effortlessly fill PDF templates 
 with the data you provide in the request and directly receive 
