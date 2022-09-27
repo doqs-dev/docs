@@ -1,6 +1,6 @@
 import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
     SimpleCodeHighlighter
-} from "../../components/code-highlighter"; import {CellAttributes, CommonFields, FontAttributes} from "../../components/common-fields.mdx"; import Head
+} from "../../components/code-highlighter"; import {CellAttributes, CommonFields, TextAttributes} from "../../components/common-fields.mdx"; import Head
     from "next/head";
 
 <Head>
@@ -18,16 +18,7 @@ Add a date / time or datetime field to your template and control the output form
 
         <Attribute name="type" required="1">Identifier of the type of the field. Always set to `date`.</Attribute>
 
-        <Attribute name="font_size" required={false}>Specify the font size to be filled with. Defaults to 9</Attribute>
-        <Attribute name="color" required={false}>Specify the font color to be used. Format is either common color cod
-            names (e.g. black, red, etc.) or hex color codes. Defaults to `black`.</Attribute>
-
-        <Attribute name="h_align" required={false}>Horizontal alignment of the to be filled text.
-            Possible values are `L` for left aligned, `C` for centering and `R` for right aligned text. Defaults to
-            `L`.</Attribute>
-        <Attribute name="v_align" required={false}>Vertical alignment of the to be filled text.
-            Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to
-            `T`.</Attribute>
+        <TextAttributes />
 
         <Attribute name="locale" required={true}>The locale which should be used for formatting the
             datetime.</Attribute>
@@ -40,8 +31,6 @@ Add a date / time or datetime field to your template and control the output form
             * `%X` outputs locale’s appropriate time representation, e.g. with locale `en_US`: `21:16:00`
             * `%B` outputs locale’s appropriate month name, e.g. with locale `en_US`: `May`
         </Attribute>
-
-        <FontAttributes />
 
         <CellAttributes />
 
@@ -64,9 +53,9 @@ Add a date / time or datetime field to your template and control the output form
     "color": "black",
     "h_align": "L",
     "v_align": "B",
+    "font": "helvetica",
     "locale": "en_US",
     "format": "%Y-%m-%d %H:%M:%S",
-    "font": "helvetica"
 }`}/>
         </div>
     </div>
