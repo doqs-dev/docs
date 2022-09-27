@@ -2,7 +2,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
     SimpleCodeHighlighter
 } from "../../components/code-highlighter"; import {
     CellAttributes,
-    CommonFields
+    CommonFields, FontAttributes
 } from "../../components/common-fields.mdx"; import Head
     from "next/head";
 
@@ -30,6 +30,8 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
         <Attribute name="v_align" required={false}>Vertical alignment of the to be filled text.
             Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to
             `T`.</Attribute>
+
+        <FontAttributes />
 
         <CellAttributes/>
 

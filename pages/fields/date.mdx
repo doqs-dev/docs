@@ -1,6 +1,6 @@
 import {Attribute} from "../../components/attribute"; import {Grid} from "../../components/grid"; import {
     SimpleCodeHighlighter
-} from "../../components/code-highlighter"; import {CellAttributes, CommonFields} from "../../components/common-fields.mdx"; import Head
+} from "../../components/code-highlighter"; import {CellAttributes, CommonFields, FontAttributes} from "../../components/common-fields.mdx"; import Head
     from "next/head";
 
 <Head>
@@ -40,6 +40,8 @@ Add a date / time or datetime field to your template and control the output form
             * `%X` outputs locale’s appropriate time representation, e.g. with locale `en_US`: `21:16:00`
             * `%B` outputs locale’s appropriate month name, e.g. with locale `en_US`: `May`
         </Attribute>
+
+        <FontAttributes />
 
         <CellAttributes />
 
