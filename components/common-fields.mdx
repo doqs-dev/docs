@@ -62,3 +62,25 @@ export const CellAttributes = () => {
         </>
     )
 }
+
+
+export const TextAttributes = () => {
+    return (
+        <>
+            <Attribute name="font_size" required={false}>Specify the font size to be filled with. Defaults to
+                9</Attribute>
+            <Attribute name="color" required={false}>Specify the font color to be used. Format is either common color
+                cod
+                names (e.g. black, red, etc.) or hex color codes. Defaults to `black`.</Attribute>
+
+            <Attribute name="h_align" required={false}>Horizontal alignment of the to be filled text.
+                Possible values are `L` for left aligned, `C` for centering and `R` for right aligned text. Defaults to
+                `L`.</Attribute>
+            <Attribute name="v_align" required={false}>Vertical alignment of the to be filled text.
+                Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to
+                `B`.</Attribute>
+            <Attribute name="font">Defined the font to be used: Currently supported are: `courier`, `helvetica` and
+                `times_roman`. Defaults to `helvetica`.</Attribute>
+        </>
+    )
+}

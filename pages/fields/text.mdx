@@ -2,7 +2,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
     SimpleCodeHighlighter
 } from "../../components/code-highlighter"; import {
     CellAttributes,
-    CommonFields
+    CommonFields, TextAttributes
 } from "../../components/common-fields.mdx"; import Head
     from "next/head";
 
@@ -20,16 +20,7 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
 
         <Attribute name="type" required="1">Identifier of the type of the field. Always set to `text`.</Attribute>
 
-        <Attribute name="font_size" required={false}>Specify the font size to be filled with. Defaults to 9</Attribute>
-        <Attribute name="color" required={false}>Specify the font color to be used. Format is either common color cod
-            names (e.g. black, red, etc.) or hex color codes. Defaults to `black`.</Attribute>
-
-        <Attribute name="h_align" required={false}>Horizontal alignment of the to be filled text.
-            Possible values are `L` for left aligned, `C` for centering and `R` for right aligned text. Defaults to
-            `L`.</Attribute>
-        <Attribute name="v_align" required={false}>Vertical alignment of the to be filled text.
-            Possible values are `T` for top aligned, `C` for centering and `B` for bottom aligned text. Defaults to
-            `T`.</Attribute>
+        <TextAttributes />
 
         <CellAttributes/>
 
@@ -50,7 +41,8 @@ import {Attribute} from "../../components/attribute"; import {Grid} from "../../
     "font_size": 9,
     "color": "black",
     "h_align": "L",
-    "v_align": "B"
+    "v_align": "B",
+    "font": "helvetica"
 }`}/>
         </div>
     </div>
