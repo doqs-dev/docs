@@ -1,8 +1,9 @@
 import {Endpoint} from "../../components/endpoint";
 import {Grid} from "../../components/grid";
 import {Attribute} from "../../components/attribute"; import {
-    RequestExample
+  RequestExample
 } from "../../components/request-example"; import Head from "next/head";
+import {Callout} from "../../components/callout";
 
 <Head>
   <title>Render your PDF document | doqs.dev</title>
@@ -14,38 +15,57 @@ import {Attribute} from "../../components/attribute"; import {
 <br/>
 
 For [authentication](/api-reference/authentication) provide the `x-api-key` header. The development key is not usable for this endpoint.
+<br/>
+
+<Callout>The rendering time is currently limited to 25 seconds. If this mark is hit, you will receive a HTTP status code of 408.</Callout>
+<br/>
+<Callout>The request body payload is limited to 6 MB. If you use too many inline pictures they can also be fetched from public URLs.</Callout>
 
 <br/>
 
 ## Request
 <Grid>
-    <div>
-        ### Header attributes
-        <Attribute name={"content-type"} required={true}>
-            Only acceptable content type is `application/json`.
-        </Attribute>
-        <Attribute name={"Accept"} required={true}>
-            Your application should accept `application/pdf`.
-        </Attribute>
+  <div>
+    ### Header attributes
+    <Attribute name={ "content-type" } required={ true }>
+      Only acceptable content type is `application/json`.
+    </Attribute>
+    <Attribute name={ "Accept" } required={ true }>
+      Your application should accept `application/pdf`.
+    </Attribute>
 
-        ### Body attributes
-        <Attribute name={"template_html"} required={true}>The HTML template you want to render into a document</Attribute>
-        <Attribute name={"header_template"} required={false}>The HTML template used as a header and will appear on every page.</Attribute>
-        <Attribute name={"footer_template"} required={false}>The HTML template used as a footer and will appear on every page.</Attribute>
+    ### Body attributes
+    <Attribute name={ "template_html" } required={ true }>The HTML template you want to render into a
+      document</Attribute>
+    <Attribute name={ "header_template" } required={ false }>The HTML template used as a header and will appear on every
+      page.</Attribute>
+    <Attribute name={ "footer_template" } required={ false }>The HTML template used as a footer and will appear on every
+      page.</Attribute>
 
-        <Attribute name={"pdf.orientation"} required={false}>Possible values are `landscape` and `portrait`. Defaults to `portrait`</Attribute>
-        <Attribute name={"pdf.scale"} required={false}>Scale of the document used. Range from 0.1 to 2. Defaults to `1`</Attribute>
-        <Attribute name={"pdf.format"} required={false}>Format of the resulting document. A1 to A6 are supported, defaults to A4.</Attribute>
+    <Attribute name={ "pdf.orientation" } required={ false }>Possible values are `landscape` and `portrait`. Defaults to
+      `portrait`</Attribute>
+    <Attribute name={ "pdf.scale" } required={ false }>Scale of the document used. Range from 0.1 to 2. Defaults to
+      `1`</Attribute>
+    <Attribute name={ "pdf.format" } required={ false }>Format of the resulting document. A1 to A6 are supported,
+      defaults to A4.</Attribute>
 
-      ^ <Attribute name={"pdf.margin.top"} required={false}>Top margin of the document. Number string ending in one of the following units: `mm`, `in`, `cm`, `px`.</Attribute>
-        <Attribute name={"pdf.margin.left"} required={false}>Left margin of the document. Number string ending in one of the following units: `mm`, `in`, `cm`, `px`.</Attribute>
-        <Attribute name={"pdf.margin.right"} required={false}>Right margin of the document. Number string ending in one of the following units: `mm`, `in`, `cm`, `px`.</Attribute>
-        <Attribute name={"pdf.margin.bottom"} required={false}>Bottom margin of the document. Number string ending in one of the following units: `mm`, `in`, `cm`, `px`.</Attribute>
-    </div>
-    <RequestExample method={'post'} url={'/pdf-generator/render'} headers={{
+    <Attribute name={ "pdf.margin.top" } required={ false }>Top margin of the document. Number string ending in one of
+      the following units: `mm`, `in`, `cm`, `px`.</Attribute>
+    <Attribute name={ "pdf.margin.left" } required={ false }>Left margin of the document. Number string ending in one of
+      the following units: `mm`, `in`, `cm`, `px`.</Attribute>
+    <Attribute name={ "pdf.margin.right" } required={ false }>Right margin of the document. Number string ending in one
+      of the following units: `mm`, `in`, `cm`, `px`.</Attribute>
+    <Attribute name={ "pdf.margin.bottom" } required={ false }>Bottom margin of the document. Number string ending in
+      one of the following units: `mm`, `in`, `cm`, `px`.</Attribute>
+  </div>
+  <div className={ "relative" }>
+    <div className="sticky top-0">
+      <RequestExample method={ 'post' } url={ '/pdf-generator/render' } headers={ {
         "x-api-key": "your-api-key",
         "content-type": "application/json"
-    }} json={{"template_html": "<html>Your template</html>"}}></RequestExample>
+      } } json={ {"template_html": "<html>Your template</html>"} }></RequestExample>
+    </div>
+  </div>
 </Grid>
 
 <br/>
@@ -55,9 +75,9 @@ In case of a successful request, the endpoint will return the bytes of the rende
 
 ### Headers
 <Grid>
-    <div>
-        <Attribute name={"content-type"}>The content type header will be set to application/pdf.</Attribute>
-        <Attribute name={"x-submission-id"}>Id of the submission</Attribute>
-    </div>
-    <div/>
+  <div>
+    <Attribute name={ "content-type" }>The content type header will be set to application/pdf.</Attribute>
+    <Attribute name={ "x-submission-id" }>Id of the submission</Attribute>
+  </div>
+  <div/>
 </Grid>
