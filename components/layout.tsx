@@ -37,7 +37,7 @@ export default function Layout({children}) {
                 Fill template
               </a></li>
 
-              <li className={"uppercase text-gray-500 text-xs my-3"}>Fields</li>
+              <li className={"uppercase text-gray-500 text-xs my-1"}>Fields</li>
               <li className={styles.li}><a href="/pdf-filling/fields/text">Text field</a></li>
               <li className={styles.li}><a href="/pdf-filling/fields/checkbox">Checkbox field</a></li>
               <li className={styles.li}><a href="/pdf-filling/fields/date">Date field</a></li>
@@ -50,7 +50,7 @@ export default function Layout({children}) {
               {children}
             </main>
             <footer>
-              <div className="ml-8 mt-5 text-gray-700 grid grid-flow-col sm:auto-cols-max">
+              <div className="ml-8 mt-5 pb-2 text-gray-700 grid grid-flow-col sm:auto-cols-max">
                 <span className="mr-10 font-bold">
                 <a href={"https://doqs.dev"}>doqs.dev</a>
               </span>
