@@ -27,6 +27,7 @@ export default function Layout({children}) {
                 <a href="/">Introduction</a>
               </li>
               <li className={styles.li}><a href="/authentication">Authentication</a></li>
+
               <li className={"uppercase text-gray-500 text-sm my-3"}>PDF Filling</li>
               <li className={styles.li}><a href="/pdf-filling/create-template">
                 <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
@@ -42,6 +43,12 @@ export default function Layout({children}) {
               <li className={styles.li}><a href="/pdf-filling/fields/checkbox">Checkbox field</a></li>
               <li className={styles.li}><a href="/pdf-filling/fields/date">Date field</a></li>
               <li className={styles.li}><a href="/pdf-filling/fields/image">Image field</a></li>
+
+              <li className={"uppercase text-gray-500 text-sm my-3"}>PDF Generator</li>
+              <li className={styles.li}><a href="/pdf-generator/render">
+                <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
+                Render document
+              </a></li>
             </ul>
 
           </aside>
