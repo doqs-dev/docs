@@ -26,22 +26,22 @@ export default function Layout({children}) {
               <li className={styles.li}>
                 <a href="/">Introduction</a>
               </li>
-              <li className={"uppercase text-gray-500 text-sm my-3"}>API Reference</li>
-              <li className={styles.li}><a href="/api-reference/authentication">Authentication</a></li>
-              <li className={styles.li}><a href="/api-reference/create-template">
+              <li className={styles.li}><a href="/authentication">Authentication</a></li>
+              <li className={"uppercase text-gray-500 text-sm my-3"}>PDF Filling</li>
+              <li className={styles.li}><a href="/pdf-filling/create-template">
                 <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
                 Create template
               </a></li>
-              <li className={styles.li}><a href="/api-reference/fill-template">
+              <li className={styles.li}><a href="/pdf-filling/fill-template">
                 <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
                 Fill template
               </a></li>
 
-              <li className={"uppercase text-gray-500 text-sm my-3"}>Fields</li>
-              <li className={styles.li}><a href="/fields/text">Text field</a></li>
-              <li className={styles.li}><a href="/fields/checkbox">Checkbox field</a></li>
-              <li className={styles.li}><a href="/fields/date">Date field</a></li>
-              <li className={styles.li}><a href="/fields/image">Image field</a></li>
+              <li className={"uppercase text-gray-500 text-xs my-3"}>Fields</li>
+              <li className={styles.li}><a href="/pdf-filling/fields/text">Text field</a></li>
+              <li className={styles.li}><a href="/pdf-filling/fields/checkbox">Checkbox field</a></li>
+              <li className={styles.li}><a href="/pdf-filling/fields/date">Date field</a></li>
+              <li className={styles.li}><a href="/pdf-filling/fields/image">Image field</a></li>
             </ul>
 
           </aside>
