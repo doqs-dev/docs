@@ -50,7 +50,7 @@ export default function Layout({children}) {
                 Render document
               </a></li>
               <li className={"uppercase text-gray-500 text-xs my-1"}>Guides</li>
-              <li className={styles.li}><a href="/pdf-generator/guides/how-to-use-header-footer-templates.mdx">
+              <li className={styles.li}><a href="/pdf-generator/guides/how-to-use-header-footer-templates">
                 How to use header and footer templates
               </a></li>
 

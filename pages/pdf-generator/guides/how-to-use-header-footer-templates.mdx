@@ -1,0 +1,23 @@
+import Head from "next/head";
+import {Callout} from "../../../components/callout";
+
+<Head>
+  <title>Guide: How to use header and footer templates? | doqs.dev</title>
+</Head>
+
+# How to use header and footer templates?
+And how to make your generate PDF documents more beautiful 🎨
+
+<br/>
+## Limitations and caveats
+Due to our rendering engine being based on chromium we have the following limitations:
+1. External resource cannot be loaded, this includes stylesheets, images, javascript or external fonts.
+2. No javascript execution possible.
+3. Chromium wraps the footer and header html, so make sure not to use a root html or body tag, as this leads to invalid HTML and ultimately to wrongly rendered items.
+
+<br/>
+<Callout>
+  Chromium is known for having scaling issues in the header or footer, leading to smaller displayed items especially
+  noticeable on fonts. <br/>
+  <b>But don't worry, we make sure your document contenst are displayed correctly!</b>
+</Callout>
