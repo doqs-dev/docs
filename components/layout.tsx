@@ -49,6 +49,11 @@ export default function Layout({children}) {
                 <small className="inline-block mr-0.5"><Badge type="success" size="sm">POST</Badge></small>
                 Render document
               </a></li>
+              <li className={"uppercase text-gray-500 text-xs my-1"}>Guides</li>
+              <li className={styles.li}><a href="/pdf-generator/guides/how-to-use-header-footer-templates.mdx">
+                How to use header and footer templates
+              </a></li>
+
             </ul>
 
           </aside>
