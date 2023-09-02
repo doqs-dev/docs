@@ -11,7 +11,7 @@ And how to make your generate PDF documents more beautiful 🎨
 <br/>
 ## Limitations and caveats
 Due to our rendering engine being based on chromium we have the following limitations:
-1. External resource cannot be loaded, this includes stylesheets, images, javascript or external fonts.
+1. External resource cannot be loaded, this includes stylesheets, images, javascript or external fonts. For images you can use base64 encoded data-uris, and for CSS you can use inline styles.
 2. No javascript execution possible.
 3. Chromium wraps the footer and header html, so make sure not to use a root html or body tag, as this leads to invalid HTML and ultimately to wrongly rendered items.
 
@@ -22,9 +22,11 @@ Due to our rendering engine being based on chromium we have the following limita
   <b>But don't worry, we make sure your document content are displayed correctly!</b>
 </Callout>
 
+<br/>
 
 ## Special CSS classes
 The following CSS classes are supported in header and footer elements:
 * An element with the class `.pageNumber` will output the current page number, starting with 1.
 * An element with the class `.totalPages` will output the total number of pages in the document.
+
 
