@@ -3,6 +3,7 @@ import {Callout} from "../../../components/callout";
 
 <Head>
   <title>Guide: How to use header and footer templates? | doqs.dev</title>
+  <base target="_blank"></base>
 </Head>
 
 # How to use header and footer templates?
@@ -11,7 +12,7 @@ And how to make your generate PDF documents more beautiful 🎨
 <br/>
 ## Limitations and caveats
 Due to our rendering engine being based on chromium we have the following limitations:
-1. External resource cannot be loaded, this includes stylesheets, images, javascript or external fonts. For images you can use base64 encoded data-uris, and for CSS you can use inline styles.
+1. External resource cannot be loaded, this includes stylesheets, images, javascript or external fonts. For images you can use base64 encoded data URIs, and for CSS you can use inline styles.
 2. No javascript execution possible.
 3. Chromium wraps the footer and header html, so make sure not to use a root html or body tag, as this leads to invalid HTML and ultimately to wrongly rendered items.
 
@@ -28,5 +29,15 @@ Due to our rendering engine being based on chromium we have the following limita
 The following CSS classes are supported in header and footer elements:
 * An element with the class `.pageNumber` will output the current page number, starting with 1.
 * An element with the class `.totalPages` will output the total number of pages in the document.
+
+
+
+
+<br/>
+
+## Experimental: Use paged.js
+[paged.js](https://pagedjs.org/) takes care of paginating the HTML for your PDF document.
+It additionally allows you to use Javascript and external resources in the header and footers, as those are defined in the main HTML template too.
+**Be aware**: paged.js significantly increases the rendering time due to the computation of the layout.
 
 
