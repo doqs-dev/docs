@@ -7,7 +7,7 @@ import {Callout} from "../../../components/callout";
 </Head>
 
 # How to use header and footer templates?
-And how to make your generate PDF documents more beautiful 🎨
+This guide highlights all the necessary information on how and when to use header and footer templates
 
 <br/>
 ## Limitations and caveats
@@ -25,19 +25,23 @@ Due to our rendering engine being based on chromium we have the following limita
 
 <br/>
 
-## Special CSS classes
+## When to use header or footer templates?
+Our recommendation is to use header and footer templates, when your content is free flowing like a text document, e.g. contracts, invoices or text reports.
+When you have a fixed page template, e.g. like a graphical report or a menu, then it might be easier to includer page header and footer into the main template and repeat them
+<Callout>
+  When using header or footer templates, **don't** forget to set margins, otherwise they won't be displayed up.
+</Callout>
+<br/>
+###  Special CSS classes
 The following CSS classes are supported in header and footer elements:
 * An element with the class `.pageNumber` will output the current page number, starting with 1.
 * An element with the class `.totalPages` will output the total number of pages in the document.
 
-
-
-
 <br/>
 
-## Experimental: Use paged.js
-[paged.js](https://pagedjs.org/) takes care of paginating the HTML for your PDF document.
-It additionally allows you to use Javascript and external resources in the header and footers, as those are defined in the main HTML template too.
+## Alternative: Use paged.js
+Instead of using header and footer elements, your main template can integrate [paged.js](https://pagedjs.org/), which takes care of paginating the HTML for your PDF document.
+It additionally allows you to use Javascript and external resources in the header and footers, as those are defined in the main HTML template too ([Reference](https://pagedjs.org/documentation/7-generated-content-in-margin-boxes/#running-elements)).
 **Be aware**, using paged.js significantly increases the rendering time due to the computation of the layout.
 
 
