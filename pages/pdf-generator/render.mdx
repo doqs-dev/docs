@@ -17,9 +17,11 @@ import {Callout} from "../../components/callout";
 For [authentication](/authentication) provide the `x-api-key` header. The development key is not usable for this endpoint.
 <br/>
 
-<Callout>The rendering time is currently limited to 25 seconds. When exceeding the limit you will receive a response with a HTTP status code of 408</Callout>
+<Callout>The rendering time is currently limited to 25 seconds. When exceeding the limit you will receive a response
+  with a HTTP status code of 408</Callout>
 <br/>
-<Callout>The request body payload is limited to 6 MB. If you use too many inline pictures they can also be fetched from public URLs.</Callout>
+<Callout>The request body payload is limited to 6 MB. If you use too many inline pictures they can also be fetched from
+  public URLs.</Callout>
 
 <br/>
 
@@ -42,15 +44,22 @@ For [authentication](/authentication) provide the `x-api-key` header. The develo
     <Attribute name={ "footer_template" } required={ false }>The HTML template used as a footer and will appear on every
       page.</Attribute>
     <Callout>
-      Make sure to read our [guide on how to use header and footer templates](/pdf-generator/guides/how-to-use-header-footer-templates), for an optimal document generated.
+      Make sure to read our [guide on how to use header and footer
+      templates](/pdf-generator/guides/how-to-use-header-footer-templates), for an optimal document generated.
       If using header or footer, make sure to set top or bottom margins to show the header or footer content.
     </Callout>
     <br/>
 
 
-    <Attribute name={ "presigned_upload.url" } required={ false }>Https URL to upload the resulting PDF to.</Attribute>
-    <Attribute name={ "presigned_upload.method" } required={ false }>Http method to be used for the upload functionality. Can bei either POST or PUT, defaults to PUT.</Attribute>
-    <br />
+    <Attribute name={ "presigned_upload.url" } required={ false }>Https URL to upload the resulting PDF to. This feature
+      is not available in the free tier.</Attribute>
+    <Attribute name={ "presigned_upload.method" } required={ false }>Http method to be used for the upload
+      functionality. Can bei either POST or PUT, defaults to PUT.</Attribute>
+    <Callout>
+      Make sure to read our [guide on how to use the presigned uploads
+      ](/pdf-generator/guides/how-to-use-presigned-uplods).
+    </Callout>
+    <br/>
 
     <Attribute name={ "pdf.orientation" } required={ false }>Possible values are `landscape` and `portrait`. Defaults to
       `portrait`</Attribute>
