@@ -53,6 +53,9 @@ export default function Layout({children}) {
               <li className={styles.li}><a href="/pdf-generator/guides/how-to-use-header-footer-templates">
                 How to use header and footer templates
               </a></li>
+              <li className={styles.li}><a href="/pdf-generator/guides/how-to-use-presigned-uploads">
+                How to presigned uploads
+              </a></li>
 
             </ul>
 
