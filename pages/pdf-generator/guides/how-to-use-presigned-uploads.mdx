@@ -49,8 +49,8 @@ s3_client.generate_presigned_url(
 )
 ` }/>
   <div>
-    The resulting url can then be used in the request body.
-    By default if not configured differently when generating the presigned URL AWS S3 expects the file to uploaded with the HTTP method `PUT.`
+    The resulting url can then be used in the request body. <br/>
+    By default, AWS S3 expects files to be uploaded using the PUT HTTP method when generating a presigned URL, unless configured otherwise.
   </div>
     <SimpleCodeHighlighter language="josn" code={ `{
     "template_html": "My beautiful document",
@@ -68,7 +68,7 @@ Some providers like AWS S3 let you choose the HTTP method being used for the upl
 it is mandatory that this is also matching the HTTP method passed in the redner request.
 
 * Google Cloud Storage: [Documentation](https://cloud.google.com/storage/docs/samples/storage-generate-upload-signed-url-v4)
-* Dropbox: [Documentation](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link). The temporary upload links of dropbox require to pass POST as the HTTP method for the upload in the render request.
+* Dropbox: [Documentation](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link). The temporary upload links of dropbox require to pass `POST` as the HTTP method for the upload in the render request.
 * Supabase: [Documentation](https://supabase.com/docs/reference/javascript/storage-from-createsigneduploadurl). Select `PUT` as an HTTP upload method in the request.
 
 <br/>
