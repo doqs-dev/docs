@@ -1,0 +1,74 @@
+import Head from "next/head";
+import {Callout} from "../../../components/callout";
+import {SimpleCodeHighlighter} from "../../../components/code-highlighter";
+import {Grid} from "../../../components/grid";
+
+<Head>
+  <title>Guide: How to use header and footer templates? | doqs.dev</title>
+</Head>
+
+
+# How to use presigned uploads?
+
+<Callout>
+  <b>Feature availability</b>: This feature is not available in the free tier. Consider subscribing to use this
+  feature. <br/>
+  <b>Disclaimer</b>: To be able to provide this feature the file is temporarily stored in our encrypted S3 bucket. After
+  processing it is directly removed.
+</Callout>
+<br/>
+
+
+In many cases, documents are commonly stored in block storages such as AWS S3, Google Cloud Storage, or Dropbox. Our platform
+simplifies the process of uploading documents to your chosen provider by eliminating the need for sharing or configuring intricate details.
+
+To get started, all you need to do is generate a temporary presigned upload URL with your selected provider
+and share it with us. From there, we will handle the task of uploading the file directly to your chosen provider after rendering it.
+We will try to upload the file for <b>3</b> times in case of any error, with 3 and 6 seconds delay between those attempts.
+
+<br />
+## Provider Guides
+
+### How to upload your documents to AWS S3 buckets?
+<Grid>
+  <div>
+    To upload a document directly to your AWS S3 bucket, use the AWS SDKs to generate a presigned upload URL according
+    to [their
+    documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example_s3_Scenario_PresignedUrl_section.html).
+
+    Since our rendering is pretty fast we recommend setting an expiration time of 5 minutes.
+
+  </div>
+  <SimpleCodeHighlighter language="python" code={ `import boto3
+
+s3_client = boto3.client("s3")
+s3_client.generate_presigned_url(
+  ClientMethod="put_object",
+  Params={"Bucket": "my-bucket-name", "Key": "my-file.pdf"},
+  ExpiresIn=300
+)
+` }/>
+  <div>
+    The resulting url can then be used in the request body. <br/>
+    By default, AWS S3 expects files to be uploaded using the PUT HTTP method when generating a presigned URL, unless configured otherwise.
+  </div>
+    <SimpleCodeHighlighter language="josn" code={ `{
+    "template_html": "My beautiful document",
+    "presigned_upload": {
+      "url": "<PRESIGEND_URL_WITH_CLIENT>",
+      "method": "PUT"
+    }
+}` }/>
+</Grid>
+
+### Additional providers
+
+The presigned upload feature is compatible with various storage providers that allow you to upload files via HTTP method PUT or POST.
+Some providers like AWS S3 let you choose the HTTP method being used for the upload when generating the presigned URL,
+it is mandatory that this is also matching the HTTP method passed in the redner request.
+
+* Google Cloud Storage: [Documentation](https://cloud.google.com/storage/docs/samples/storage-generate-upload-signed-url-v4)
+* Dropbox: [Documentation](https://www.dropbox.com/developers/documentation/http/documentation#files-get_temporary_upload_link). The temporary upload links of dropbox require to pass `POST` as the HTTP method for the upload in the render request.
+* Supabase: [Documentation](https://supabase.com/docs/reference/javascript/storage-from-createsigneduploadurl). Select `PUT` as an HTTP upload method in the request.
+
+<br/>
